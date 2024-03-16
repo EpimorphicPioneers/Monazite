@@ -1,0 +1,6 @@
+{
+  "config.jade.plugin_monazite.recipe_info_fluid_output": "Recipe Fluids Display",
+  "config.jade.plugin_monazite.recipe_info_item_output": "Recipe Items Display",
+  "monazite.fluid.outputs": "Fluid Crafting:",
+  "monazite.item.outputs": "Item Crafting:"
+}

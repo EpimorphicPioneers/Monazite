@@ -1,0 +1,6 @@
+{
+  "config.jade.plugin_monazite.recipe_info_fluid_output": "配方流体显示",
+  "config.jade.plugin_monazite.recipe_info_item_output": "配方物品显示",
+  "monazite.fluid.outputs": "流体制作中:",
+  "monazite.item.outputs": "物品制作中:"
+}
