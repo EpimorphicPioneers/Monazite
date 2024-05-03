@@ -2,6 +2,7 @@ package com.epimorphismmc.monazite.integration.jade.provider;
 
 import com.epimorphismmc.monazite.Monazite;
 import com.epimorphismmc.monazite.config.MonaziteConfigHolder;
+import com.epimorphismmc.monazite.integration.jade.element.ScaleFluidStackElement;
 import com.epimorphismmc.monazite.utils.GTRecipeHelper;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
@@ -18,15 +19,12 @@ import net.minecraft.network.chat.ComponentUtils;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.phys.Vec2;
 import org.jetbrains.annotations.Nullable;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
 import snownee.jade.api.fluid.JadeFluidObject;
-import snownee.jade.api.ui.BoxStyle;
-import snownee.jade.api.ui.IDisplayHelper;
-import snownee.jade.api.ui.IElementHelper;
-import snownee.jade.api.ui.IProgressStyle;
 import snownee.jade.util.FluidTextHelper;
 
 import java.util.ArrayList;
@@ -81,21 +79,24 @@ public class RecipeFluidOutputInfoProvider extends CapabilityBlockProvider<Recip
                 }
 
                 if (!fluidOutputs.isEmpty()) {
-                    IElementHelper helper = IElementHelper.get();
                     iTooltip.add((Component.translatable("monazite.fluid.outputs").append(" ")));
                     for (FluidStack fluidOutput : fluidOutputs) {
                         if (fluidOutput != null && !fluidOutput.isEmpty()) {
+                            iTooltip.add(new ScaleFluidStackElement(getFluid(fluidOutput), 0.75f).translate(new Vec2(0, -2)));
                             if (MonaziteConfigHolder.INSTANCE.topInformation.conciseMode) {
-                                iTooltip.add(getFluidName(fluidOutput).copy().append(" * " + ChatFormatting.AQUA + FluidTextHelper.getUnicodeMillibuckets(fluidOutput.getAmount(), true)));
+                                iTooltip.append(getFluidName(fluidOutput).copy().append(" * " + ChatFormatting.AQUA + FluidTextHelper.getUnicodeMillibuckets(fluidOutput.getAmount(), true)));
                             } else {
                                 Component text;
                                 if (MonaziteConfigHolder.INSTANCE.topInformation.displayFluidName) {
-                                    text = Component.translatable("jade.fluid", IDisplayHelper.get().stripColor(getFluidName(fluidOutput)), FluidTextHelper.getUnicodeMillibuckets(fluidOutput.getAmount(), true));
+                                    text = Component.literal(" ")
+                                        .append(FluidTextHelper.getUnicodeMillibuckets(fluidOutput.getAmount(), true))
+                                        .append(" ")
+                                        .append(getFluidName(fluidOutput))
+                                        .withStyle(ChatFormatting.WHITE);
                                 } else {
                                     text = Component.literal(FluidTextHelper.getUnicodeMillibuckets(fluidOutput.getAmount(), true));
                                 }
-                                IProgressStyle progressStyle = helper.progressStyle().overlay(IElementHelper.get().fluid(getFluid(fluidOutput)));
-                                iTooltip.add(helper.progress(1, text, progressStyle, BoxStyle.DEFAULT, true));
+                                iTooltip.append(text);
                             }
                         }
                     }
