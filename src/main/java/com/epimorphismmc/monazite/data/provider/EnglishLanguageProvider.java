@@ -12,10 +12,8 @@ public class EnglishLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add("monazite.item.outputs", "Item Crafting:");
-        add("monazite.fluid.outputs", "Fluid Crafting:");
-        add("config.jade.plugin_monazite.recipe_info_item_output", "Recipe Items Display");
-        add("config.jade.plugin_monazite.recipe_info_fluid_output", "Recipe Fluids Display");
+        add("monazite.jade.output", "Recipe Output:");
+        add("config.jade.plugin_monazite.recipe_info_output", "Recipe Outputs Display");
         add("key.categories.monazite", "Monazite");
         add("key.toggleConciseMode", "Toggle Concise Mode");
         add("config.monazite.option.topInformation", "Top Information");

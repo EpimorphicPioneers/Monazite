@@ -1,6 +1,5 @@
 {
-  "config.jade.plugin_monazite.recipe_info_fluid_output": "Recipe Fluids Display",
-  "config.jade.plugin_monazite.recipe_info_item_output": "Recipe Items Display",
+  "config.jade.plugin_monazite.recipe_info_output": "Recipe Outputs Display",
   "config.monazite.option.conciseMode": "Concise Mode",
   "config.monazite.option.displayFluidName": "Display Fluid Name",
   "config.monazite.option.displayFluidOutputs": "Display Fluid Outputs",
@@ -10,6 +9,5 @@
   "config.monazite.option.topInformation": "Top Information",
   "key.categories.monazite": "Monazite",
   "key.toggleConciseMode": "Toggle Concise Mode",
-  "monazite.fluid.outputs": "Fluid Crafting:",
-  "monazite.item.outputs": "Item Crafting:"
+  "monazite.jade.output": "Recipe Output:"
 }

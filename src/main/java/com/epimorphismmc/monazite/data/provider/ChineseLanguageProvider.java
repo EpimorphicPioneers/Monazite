@@ -12,10 +12,8 @@ public class ChineseLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add("monazite.item.outputs", "物品制作中:");
-        add("monazite.fluid.outputs", "流体制作中:");
-        add("config.jade.plugin_monazite.recipe_info_item_output", "配方物品显示");
-        add("config.jade.plugin_monazite.recipe_info_fluid_output", "配方流体显示");
+        add("monazite.jade.output", "配方输出:");
+        add("config.jade.plugin_monazite.recipe_info_output", "配方输出显示");
         add("key.categories.monazite", "Monazite");
         add("key.toggleConciseMode", "开/关简洁模式");
         add("config.monazite.option.topInformation", "顶部信息");
