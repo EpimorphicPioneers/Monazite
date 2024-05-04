@@ -1,6 +1,5 @@
 {
-  "config.jade.plugin_monazite.recipe_info_fluid_output": "配方流体显示",
-  "config.jade.plugin_monazite.recipe_info_item_output": "配方物品显示",
+  "config.jade.plugin_monazite.recipe_info_output": "配方输出显示",
   "config.monazite.option.conciseMode": "简洁模式",
   "config.monazite.option.displayFluidName": "显示流体名称",
   "config.monazite.option.displayFluidOutputs": "显示流体输出",
@@ -10,6 +9,5 @@
   "config.monazite.option.topInformation": "顶部信息",
   "key.categories.monazite": "Monazite",
   "key.toggleConciseMode": "开/关简洁模式",
-  "monazite.fluid.outputs": "流体制作中:",
-  "monazite.item.outputs": "物品制作中:"
+  "monazite.jade.output": "配方输出:"
 }
