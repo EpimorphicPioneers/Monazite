@@ -19,5 +19,9 @@ public class ChineseLanguageProvider extends LanguageProvider {
         add("config.monazite.option.topInformation", "顶部信息");
         add("config.monazite.option.conciseMode", "简洁模式");
         add("config.monazite.option.itemsPerLine", "每行物品数");
+
+        add("block.monazite.dimension_display.overworld", "主世界");
+        add("block.monazite.dimension_display.the_nether", "下界");
+        add("block.monazite.dimension_display.the_end", "末地");
     }
 }

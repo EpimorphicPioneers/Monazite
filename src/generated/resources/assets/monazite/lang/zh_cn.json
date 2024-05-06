@@ -1,4 +1,7 @@
 {
+  "block.monazite.dimension_display.overworld": "主世界",
+  "block.monazite.dimension_display.the_end": "末地",
+  "block.monazite.dimension_display.the_nether": "下界",
   "config.jade.plugin_monazite.recipe_info_output": "配方输出显示",
   "config.monazite.option.conciseMode": "简洁模式",
   "config.monazite.option.itemsPerLine": "每行物品数",

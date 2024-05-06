@@ -19,5 +19,9 @@ public class EnglishLanguageProvider extends LanguageProvider {
         add("config.monazite.option.topInformation", "Top Information");
         add("config.monazite.option.conciseMode", "Concise Mode");
         add("config.monazite.option.itemsPerLine", "Items Per Line");
+
+        add("block.monazite.dimension_display.overworld", "Overworld");
+        add("block.monazite.dimension_display.the_nether", "The Nether");
+        add("block.monazite.dimension_display.the_end", "The End");
     }
 }

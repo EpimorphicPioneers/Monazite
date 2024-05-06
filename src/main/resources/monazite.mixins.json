@@ -6,6 +6,7 @@
   "client": [
   ],
   "mixins": [
+    "gtm.GTOreVeinWidgetMixin"
   ],
   "injectors": {
     "defaultRequire": 1
