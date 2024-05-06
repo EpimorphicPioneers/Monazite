@@ -1,0 +1,13 @@
+{
+  "block.monazite.dimension_display.overworld": "pןɹoʍɹǝʌO",
+  "block.monazite.dimension_display.the_end": "puƎ ǝɥ⟘",
+  "block.monazite.dimension_display.the_nether": "ɹǝɥʇǝN ǝɥ⟘",
+  "config.jade.plugin_monazite.recipe_info_output": "ʎɐןdsıᗡ sʇndʇnO ǝdıɔǝᴚ",
+  "config.monazite.option.conciseMode": "ǝpoW ǝsıɔuoƆ",
+  "config.monazite.option.displayRecipeOutputs": "ʎɐןdsıᗡ sʇndʇnO ǝdıɔǝᴚ",
+  "config.monazite.option.itemsPerLine": "ǝuıꞀ ɹǝԀ sɯǝʇI",
+  "config.monazite.option.topInformation": "uoıʇɐɯɹoɟuI do⟘",
+  "key.categories.monazite": "ǝʇızɐuoW",
+  "key.toggleConciseMode": "ǝpoW ǝsıɔuoƆ ǝןbbo⟘",
+  "monazite.recipe.output": ":ʇndʇnO ǝdıɔǝᴚ"
+}

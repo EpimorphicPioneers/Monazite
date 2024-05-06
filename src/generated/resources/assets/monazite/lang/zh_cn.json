@@ -4,6 +4,7 @@
   "block.monazite.dimension_display.the_nether": "下界",
   "config.jade.plugin_monazite.recipe_info_output": "配方输出显示",
   "config.monazite.option.conciseMode": "简洁模式",
+  "config.monazite.option.displayRecipeOutputs": "配方输出显示",
   "config.monazite.option.itemsPerLine": "每行物品数",
   "config.monazite.option.topInformation": "顶部信息",
   "key.categories.monazite": "Monazite",

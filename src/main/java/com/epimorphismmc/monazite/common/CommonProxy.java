@@ -4,7 +4,8 @@ import com.epimorphismmc.monazite.Monazite;
 import com.epimorphismmc.monazite.common.data.MoBlocks;
 import com.epimorphismmc.monazite.common.registry.MoRegistrate;
 import com.epimorphismmc.monazite.config.MonaziteConfigHolder;
-import com.epimorphismmc.monazite.data.Datagen;
+import com.epimorphismmc.monazite.data.MoDatagen;
+import com.epimorphismmc.monazite.data.MoProviderTypes;
 import com.epimorphismmc.monazite.integration.top.MonaziteTOPPlugin;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,8 +17,9 @@ public class CommonProxy {
     public CommonProxy() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.register(this);
-        eventBus.addListener(Datagen::init);
         MonaziteConfigHolder.init();
+        MoProviderTypes.init();
+        MoDatagen.init();
         MoRegistrate.MO_REGISTRATE.registerRegistrate();
     }
 
