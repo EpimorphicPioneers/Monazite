@@ -9,7 +9,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import javax.annotation.Nullable;
 
-public class FluidUtil {
+public class FluidUtils {
     public static FluidStack getFluidStack(com.lowdragmc.lowdraglib.side.fluid.FluidStack fluidStack) {
         return (FluidStack) FluidHelper.toRealFluidStack(fluidStack);
     }

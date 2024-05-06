@@ -1,10 +1,10 @@
 package com.epimorphismmc.monazite.integration.jade.provider;
 
 import com.epimorphismmc.monazite.Monazite;
+import com.epimorphismmc.monazite.api.jade.MoElementHelper;
 import com.epimorphismmc.monazite.config.MonaziteConfigHolder;
-import com.epimorphismmc.monazite.integration.jade.element.ScaleFluidStackElement;
-import com.epimorphismmc.monazite.utils.GTRecipeHelper;
-import com.epimorphismmc.monazite.utils.ItemUtil;
+import com.epimorphismmc.monazite.utils.RecipeUtils;
+import com.epimorphismmc.monazite.utils.ItemUtils;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.integration.jade.provider.CapabilityBlockProvider;
@@ -21,7 +21,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.phys.Vec2;
 import org.jetbrains.annotations.Nullable;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.ITooltip;
@@ -47,31 +46,38 @@ public class RecipeOutputInfoProvider extends CapabilityBlockProvider<RecipeLogi
     }
 
     @Override
+    protected boolean allowDisplaying(RecipeLogic capability) {
+        return MonaziteConfigHolder.INSTANCE.topInformation.displayRecipeOutputs;
+    }
+
+    @Override
     protected void write(CompoundTag compoundTag, RecipeLogic recipeLogic) {
-        compoundTag.putBoolean("Working", recipeLogic.isWorking());
-        var recipe = recipeLogic.getLastRecipe();
-        if (recipe != null) {
-            ListTag itemTags = new ListTag();
-            for (var stack : GTRecipeHelper.getOutputItem(recipe)) {
-                if (stack != null && !stack.isEmpty()) {
-                    var itemTag = new CompoundTag();
-                    ItemUtil.saveItemStack(stack, itemTag);
-                    itemTags.add(itemTag);
+        if (recipeLogic.isWorking()) {
+            compoundTag.putBoolean("Working", recipeLogic.isWorking());
+            var recipe = recipeLogic.getLastRecipe();
+            if (recipe != null) {
+                ListTag itemTags = new ListTag();
+                for (var stack : RecipeUtils.getOutputItem(recipe)) {
+                    if (stack != null && !stack.isEmpty()) {
+                        var itemTag = new CompoundTag();
+                        ItemUtils.saveItemStack(stack, itemTag);
+                        itemTags.add(itemTag);
+                    }
                 }
-            }
-            if (!itemTags.isEmpty()) {
-                compoundTag.put("OutputItems", itemTags);
-            }
-            ListTag fluidTags = new ListTag();
-            for (var stack : GTRecipeHelper.getOutputFluid(recipe)) {
-                if (stack != null && !stack.isEmpty()) {
-                    var fluidTag = new CompoundTag();
-                    stack.saveToTag(fluidTag);
-                    fluidTags.add(fluidTag);
+                if (!itemTags.isEmpty()) {
+                    compoundTag.put("OutputItems", itemTags);
                 }
-            }
-            if (!fluidTags.isEmpty()) {
-                compoundTag.put("OutputFluids", fluidTags);
+                ListTag fluidTags = new ListTag();
+                for (var stack : RecipeUtils.getOutputFluid(recipe)) {
+                    if (stack != null && !stack.isEmpty()) {
+                        var fluidTag = new CompoundTag();
+                        stack.saveToTag(fluidTag);
+                        fluidTags.add(fluidTag);
+                    }
+                }
+                if (!fluidTags.isEmpty()) {
+                    compoundTag.put("OutputFluids", fluidTags);
+                }
             }
         }
     }
@@ -85,7 +91,7 @@ public class RecipeOutputInfoProvider extends CapabilityBlockProvider<RecipeLogi
                 if (!itemTags.isEmpty()) {
                     for (Tag tag : itemTags) {
                         if (tag instanceof CompoundTag tCompoundTag) {
-                            var stack = ItemUtil.loadItemStack(tCompoundTag);
+                            var stack = ItemUtils.loadItemStack(tCompoundTag);
                             if (!stack.isEmpty()) {
                                 outputItems.add(stack);
                             }
@@ -106,7 +112,7 @@ public class RecipeOutputInfoProvider extends CapabilityBlockProvider<RecipeLogi
                 }
             }
             if (!outputItems.isEmpty() || !outputFluids.isEmpty()) {
-                iTooltip.add(Component.translatable("monazite.jade.output"));
+                iTooltip.add(Component.translatable("monazite.recipe.output"));
             }
             addItemTooltips(iTooltip, outputItems);
             addFluidTooltips(iTooltip, outputFluids);
@@ -121,22 +127,23 @@ public class RecipeOutputInfoProvider extends CapabilityBlockProvider<RecipeLogi
                 if (MonaziteConfigHolder.INSTANCE.topInformation.conciseMode) {
                     iTooltip.add(getItemName(itemOutput).copy().append(" * " + ChatFormatting.YELLOW + itemOutput.getCount()));
                 } else {
-                    if (MonaziteConfigHolder.INSTANCE.topInformation.displayItemName) {
-                        int count = itemOutput.getCount();
-                        itemOutput.setCount(1);
-                        iTooltip.add(helper.smallItem(itemOutput));
-                        iTooltip.append(Component.literal(ChatFormatting.WHITE + String.valueOf(count) + "× "));
-                        iTooltip.append(getItemName(itemOutput));
-                    } else {
-                        if (drawnCount >= MonaziteConfigHolder.INSTANCE.topInformation.itemsPerLine) {
-                            drawnCount = 0;
-                        }
-                        if (drawnCount == 0) {
-                            iTooltip.add(helper.item(itemOutput).translate(new Vec2(0, -5)));
-                        } else {
-                            iTooltip.append(helper.item(itemOutput).translate(new Vec2(0, -5)));
-                        }
-                    }
+                    int count = itemOutput.getCount();
+                    itemOutput.setCount(1);
+                    iTooltip.add(helper.smallItem(itemOutput));
+                    Component text = Component.literal(" ")
+                            .append(String.valueOf(count))
+                            .append("× ")
+                            .append(getItemName(itemOutput))
+                            .withStyle(ChatFormatting.WHITE);
+                    iTooltip.append(text);
+//                    if (drawnCount >= MonaziteConfigHolder.INSTANCE.topInformation.itemsPerLine) {
+//                        drawnCount = 0;
+//                    }
+//                    if (drawnCount == 0) {
+//                        iTooltip.add(helper.item(itemOutput).translate(new Vec2(0, -5)));
+//                    } else {
+//                        iTooltip.append(helper.item(itemOutput).translate(new Vec2(0, -5)));
+//                    }
                 }
                 drawnCount++;
             }
@@ -147,34 +154,30 @@ public class RecipeOutputInfoProvider extends CapabilityBlockProvider<RecipeLogi
         for (FluidStack fluidOutput : outputFluids) {
             if (fluidOutput != null && !fluidOutput.isEmpty()) {
                 if (MonaziteConfigHolder.INSTANCE.topInformation.conciseMode) {
-                    iTooltip.add(getFluidName(fluidOutput).copy().append(" * " + ChatFormatting.AQUA + FluidTextHelper.getUnicodeMillibuckets(fluidOutput.getAmount(), true)));
+                    iTooltip.add(getFluidName(fluidOutput).copy()
+                            .append(" * " + ChatFormatting.AQUA + FluidTextHelper.getUnicodeMillibuckets(fluidOutput.getAmount(), true)));
                 } else {
-                    iTooltip.add(new ScaleFluidStackElement(getFluid(fluidOutput), 0.75f).translate(new Vec2(0, -2)));
-                    Component text;
-                    if (MonaziteConfigHolder.INSTANCE.topInformation.displayFluidName) {
-                        text = Component.literal(" ")
+                    iTooltip.add(MoElementHelper.smallFluid(getFluid(fluidOutput)));
+                    Component text = Component.literal(" ")
                             .append(FluidTextHelper.getUnicodeMillibuckets(fluidOutput.getAmount(), true))
                             .append(" ")
                             .append(getFluidName(fluidOutput))
                             .withStyle(ChatFormatting.WHITE);
-                    } else {
-                        text = Component.literal(FluidTextHelper.getUnicodeMillibuckets(fluidOutput.getAmount(), true));
-                    }
                     iTooltip.append(text);
                 }
             }
         }
     }
 
-    private static Component getItemName(ItemStack stack) {
+    private Component getItemName(ItemStack stack) {
         return ComponentUtils.wrapInSquareBrackets(stack.getItem().getDescription()).withStyle(ChatFormatting.WHITE);
     }
 
-    private static Component getFluidName(FluidStack stack) {
+    private Component getFluidName(FluidStack stack) {
         return ComponentUtils.wrapInSquareBrackets(stack.getDisplayName()).withStyle(ChatFormatting.WHITE);
     }
 
-    private static JadeFluidObject getFluid(FluidStack stack) {
+    private JadeFluidObject getFluid(FluidStack stack) {
         return JadeFluidObject.of(stack.getFluid(), stack.getAmount());
     }
 }

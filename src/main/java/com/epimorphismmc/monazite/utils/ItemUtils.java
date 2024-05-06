@@ -8,7 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-public class ItemUtil {
+public class ItemUtils {
 
     public static CompoundTag saveItemStack(ItemStack itemStack, CompoundTag compoundTag) {
         ResourceLocation resourceLocation = BuiltInRegistries.ITEM.getKey(itemStack.getItem());

@@ -20,21 +20,10 @@ public class MonaziteConfigHolder {
     public TopInformationConfigs topInformation = new TopInformationConfigs();
 
     public static class TopInformationConfigs {
-        @Configurable
-        @Configurable.Comment({"If true, the item outputs of the current recipe will be displayed.", "Default: true"})
-        public boolean displayItemOutputs = true; // default true
 
         @Configurable
-        @Configurable.Comment({"If true, the name of the item will be displayed.", "Default: true"})
-        public boolean displayItemName = true; // default true
-
-        @Configurable
-        @Configurable.Comment({"If true, the fluid outputs of the current recipe will be displayed.", "Default: true"})
-        public boolean displayFluidOutputs = true; // default true
-
-        @Configurable
-        @Configurable.Comment({"If true, the name of the fluid will be displayed.", "Default: true"})
-        public boolean displayFluidName = true; // default true
+        @Configurable.Comment({"If true, the outputs of the current recipe will be displayed.", "Default: true"})
+        public boolean displayRecipeOutputs = true; // default true
 
         @Configurable
         @Configurable.Comment({"If true, only the name of item and fluid will be displayed.", "Default: false"})

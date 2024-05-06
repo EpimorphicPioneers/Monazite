@@ -48,8 +48,8 @@ dependencies {
     modImplementation forge.emi
 
     // TOP
-    modCompileOnly(forge.theoneprobe) { transitive = false }
-//    modImplementation(forge.theoneprobe) { transitive = false }
+//    modCompileOnly(forge.theoneprobe) { transitive = false }
+    modImplementation(forge.theoneprobe) { transitive = false }
 
     // Jade
     modImplementation(forge.jade)
