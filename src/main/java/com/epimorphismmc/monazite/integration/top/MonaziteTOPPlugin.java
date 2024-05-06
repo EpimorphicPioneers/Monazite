@@ -3,7 +3,9 @@ package com.epimorphismmc.monazite.integration.top;
 import com.epimorphismmc.monazite.Monazite;
 import com.epimorphismmc.monazite.config.MonaziteConfigHolder;
 import com.epimorphismmc.monazite.integration.top.element.FluidStackElement;
+import com.epimorphismmc.monazite.integration.top.provider.MaintenanceInfoProvider;
 import com.epimorphismmc.monazite.integration.top.provider.RecipeOutputInfoProvider;
+import com.gregtechceu.gtceu.config.ConfigHolder;
 import mcjty.theoneprobe.TheOneProbe;
 import mcjty.theoneprobe.api.IElement;
 import mcjty.theoneprobe.api.IElementFactory;
@@ -26,6 +28,10 @@ public class MonaziteTOPPlugin {
     public static void registerProvider(ITheOneProbe oneProbe) {
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayRecipeOutputs) {
             oneProbe.registerProvider(new RecipeOutputInfoProvider());
+        }
+
+        if (ConfigHolder.INSTANCE.machines.enableMaintenance && MonaziteConfigHolder.INSTANCE.topInformation.displayMaintenanceInfo) {
+            oneProbe.registerProvider(new MaintenanceInfoProvider());
         }
     }
 

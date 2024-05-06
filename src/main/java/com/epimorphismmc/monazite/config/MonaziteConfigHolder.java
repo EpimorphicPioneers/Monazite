@@ -19,6 +19,9 @@ public class MonaziteConfigHolder {
     @Configurable
     public TopInformationConfigs topInformation = new TopInformationConfigs();
 
+    @Configurable
+    public OreVeinDisplayConfigs oreVeinDisplay = new OreVeinDisplayConfigs();
+
     public static class TopInformationConfigs {
 
         @Configurable
@@ -32,6 +35,16 @@ public class MonaziteConfigHolder {
         @Configurable
         @Configurable.Comment({"Each line can have a maximum of several items, which only take effect when displayItemName is false.", "Default: 8"})
         public int itemsPerLine = 8; // default 8
+
+        @Configurable
+        @Configurable.Comment({"If true, the maintenance information of the current machine will be displayed.", "Default: true"})
+        public boolean displayMaintenanceInfo = true; // default true
+    }
+
+    public static class OreVeinDisplayConfigs {
+        @Configurable
+        @Configurable.Comment("To add custom display dimensions.")
+        public String[] dimensions = new String[0];
     }
 
 }

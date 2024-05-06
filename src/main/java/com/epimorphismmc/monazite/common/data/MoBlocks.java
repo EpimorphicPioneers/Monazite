@@ -2,6 +2,7 @@ package com.epimorphismmc.monazite.common.data;
 
 import com.epimorphismmc.monazite.api.MonaziteValues;
 import com.epimorphismmc.monazite.client.DimensionDisplayRenderer;
+import com.epimorphismmc.monazite.config.MonaziteConfigHolder;
 import com.gregtechceu.gtceu.api.block.RendererBlock;
 import com.gregtechceu.gtceu.api.item.RendererBlockItem;
 import com.lowdragmc.lowdraglib.Platform;
@@ -12,8 +13,7 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.function.Supplier;
 
 import static com.epimorphismmc.monazite.common.registry.MoRegistrate.MO_REGISTRATE;
@@ -40,8 +40,9 @@ public class MoBlocks {
     }
 
     public static void registerDimensionDisplay() {
-        List<String> dimensions = new ArrayList<>(List.of(MonaziteValues.DIM));
-        dimensions.forEach(dim -> ALL_DIM_DISPLAY_BLOCKS.put(dim, createDimensionDisplay(dim)));
+        Set<String> dimensions = new HashSet<>(List.of(MonaziteValues.DIM));
+        dimensions.addAll(List.of(MonaziteConfigHolder.INSTANCE.oreVeinDisplay.dimensions));
+        dimensions.stream().filter(Objects::nonNull).forEach(dim -> ALL_DIM_DISPLAY_BLOCKS.put(dim, createDimensionDisplay(dim)));
     }
 
 }

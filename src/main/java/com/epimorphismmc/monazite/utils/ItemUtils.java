@@ -1,6 +1,9 @@
 package com.epimorphismmc.monazite.utils;
 
 import com.epimorphismmc.monazite.Monazite;
+import com.gregtechceu.gtceu.api.item.tool.GTToolType;
+import com.gregtechceu.gtceu.common.data.GTItems;
+import com.gregtechceu.gtceu.common.data.GTMaterials;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -8,7 +11,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ItemUtils {
+
+    public static final Map<GTToolType, ItemStack> TOOL_CACHE = new HashMap<>();
 
     public static CompoundTag saveItemStack(ItemStack itemStack, CompoundTag compoundTag) {
         ResourceLocation resourceLocation = BuiltInRegistries.ITEM.getKey(itemStack.getItem());
@@ -41,6 +49,15 @@ public class ItemUtils {
             Monazite.LOGGER.debug("Tried to load invalid item: {}", compoundTag, var2);
             return ItemStack.EMPTY;
         }
+    }
+
+    public static ItemStack getToolItem(GTToolType toolType) {
+        return TOOL_CACHE.computeIfAbsent(toolType, type -> {
+            if (type == GTToolType.SOFT_MALLET) {
+                return GTItems.TOOL_ITEMS.get(GTMaterials.Rubber, type).asStack();
+            }
+            return GTItems.TOOL_ITEMS.get(GTMaterials.Aluminium, type).asStack();
+        });
     }
 
 }

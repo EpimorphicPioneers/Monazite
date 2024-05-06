@@ -29,7 +29,7 @@ public class RecipeOutputInfoProvider extends CapabilityInfoProvider<RecipeLogic
 
     @Override
     public ResourceLocation getID() {
-        return Monazite.id("recipe_info_output");
+        return Monazite.id("recipe_output_info");
     }
 
     @Nullable

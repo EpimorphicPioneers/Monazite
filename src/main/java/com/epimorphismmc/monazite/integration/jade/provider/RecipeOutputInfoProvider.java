@@ -36,7 +36,7 @@ public class RecipeOutputInfoProvider extends CapabilityBlockProvider<RecipeLogi
     public static final RecipeOutputInfoProvider INSTANCE = new RecipeOutputInfoProvider();
 
     protected RecipeOutputInfoProvider() {
-        super(Monazite.id("recipe_info_output"));
+        super(Monazite.id("recipe_output_info"));
     }
 
     @Nullable
@@ -121,7 +121,7 @@ public class RecipeOutputInfoProvider extends CapabilityBlockProvider<RecipeLogi
 
     private void addItemTooltips(ITooltip iTooltip, List<ItemStack> outputItems) {
         int drawnCount = 0;
-        IElementHelper helper = IElementHelper.get();
+        IElementHelper helper = iTooltip.getElementHelper();
         for (ItemStack itemOutput : outputItems) {
             if (itemOutput != null && !itemOutput.isEmpty()) {
                 if (MonaziteConfigHolder.INSTANCE.topInformation.conciseMode) {
