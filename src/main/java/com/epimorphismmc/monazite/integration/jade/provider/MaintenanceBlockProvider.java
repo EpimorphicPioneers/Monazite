@@ -21,11 +21,11 @@ import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
 import snownee.jade.api.ui.IElementHelper;
 
-public class MaintenanceInfoProvider extends CapabilityBlockProvider<IMaintenanceMachine> {
+public class MaintenanceBlockProvider extends CapabilityBlockProvider<IMaintenanceMachine> {
 
-    public static final MaintenanceInfoProvider INSTANCE = new MaintenanceInfoProvider();
+    public static final MaintenanceBlockProvider INSTANCE = new MaintenanceBlockProvider();
 
-    protected MaintenanceInfoProvider() {
+    protected MaintenanceBlockProvider() {
         super(Monazite.id("maintenance_info"));
     }
 
@@ -52,44 +52,10 @@ public class MaintenanceInfoProvider extends CapabilityBlockProvider<IMaintenanc
     protected void addTooltip(CompoundTag compoundTag, ITooltip iTooltip, Player player, BlockAccessor blockAccessor, BlockEntity blockEntity, IPluginConfig iPluginConfig) {
         if (compoundTag.contains("hasProblems", Tag.TAG_BYTE)) {
             if (compoundTag.getBoolean("hasProblems")) {
-                if (player.isShiftKeyDown()) {
+                if (blockAccessor.showDetails()) {
                     int problems = compoundTag.getInt("maintenanceProblems");
                     for (byte i = 0; i < 6; i++) {
                         if (((problems >> i) & 1) == 0) {
-//                        ItemStack stack = ItemStack.EMPTY;
-//                        String text = "";
-//                        switch (i) {
-//                            case 0: {
-//                                stack = ItemUtils.getToolItem(GTToolType.WRENCH);
-//                                text = "gtceu.multiblock.universal.problem.wrench";
-//                                break;
-//                            }
-//                            case 1: {
-//                                stack = ItemUtils.getToolItem(GTToolType.SCREWDRIVER);
-//                                text = "gtceu.multiblock.universal.problem.screwdriver";
-//                                break;
-//                            }
-//                            case 2: {
-//                                stack = ItemUtils.getToolItem(GTToolType.SOFT_MALLET);
-//                                text = "gtceu.multiblock.universal.problem.soft_mallet";
-//                                break;
-//                            }
-//                            case 3: {
-//                                stack = ItemUtils.getToolItem(GTToolType.HARD_HAMMER);
-//                                text = "gtceu.multiblock.universal.problem.hard_hammer";
-//                                break;
-//                            }
-//                            case 4: {
-//                                stack = ItemUtils.getToolItem(GTToolType.WIRE_CUTTER);
-//                                text = "gtceu.multiblock.universal.problem.wire_cutter";
-//                                break;
-//                            }
-//                            case 5: {
-//                                stack = ItemUtils.getToolItem(GTToolType.CROWBAR);
-//                                text = "gtceu.multiblock.universal.problem.crowbar";
-//                                break;
-//                            }
-//                        }
                             var tuple = MoUtils.getMaintenanceText(i);
                             IElementHelper helper = iTooltip.getElementHelper();
                             iTooltip.add(helper.smallItem(tuple.getA()));

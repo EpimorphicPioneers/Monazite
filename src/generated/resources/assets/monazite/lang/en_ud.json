@@ -2,6 +2,7 @@
   "block.monazite.dimension_display.overworld": "pןɹoʍɹǝʌO",
   "block.monazite.dimension_display.the_end": "puƎ ǝɥ⟘",
   "block.monazite.dimension_display.the_nether": "ɹǝɥʇǝN ǝɥ⟘",
+  "config.jade.plugin_monazite.exhaust_vent_info": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ʇuǝΛ ʇsnɐɥxƎ",
   "config.jade.plugin_monazite.maintenance_info": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ǝɔuɐuǝʇuıɐW",
   "config.jade.plugin_monazite.recipe_output_info": "ʎɐןdsıᗡ sʇndʇnO ǝdıɔǝᴚ",
   "config.monazite.option.conciseMode": "ǝpoW ǝsıɔuoƆ",
@@ -10,6 +11,8 @@
   "config.monazite.option.topInformation": "uoıʇɐɯɹoɟuI do⟘",
   "key.categories.monazite": "ǝʇızɐuoW",
   "key.toggleConciseMode": "ǝpoW ǝsıɔuoƆ ǝןbbo⟘",
+  "monazite.exhaust_vent.blocked": "pǝʞɔoןᗺ",
+  "monazite.exhaust_vent.direction": "%s :uoıʇɔǝɹıᗡ ʇuǝΛ ʇsnɐɥxƎ",
   "monazite.maintenance.broken": "ǝɔuɐuǝʇuıɐW spǝǝN",
   "monazite.maintenance.fixed": "ǝuıℲ ǝɔuɐuǝʇuıɐW",
   "monazite.recipe.output": ":ʇndʇnO ǝdıɔǝᴚ"

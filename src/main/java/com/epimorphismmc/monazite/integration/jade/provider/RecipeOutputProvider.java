@@ -32,10 +32,10 @@ import snownee.jade.util.FluidTextHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecipeOutputInfoProvider extends CapabilityBlockProvider<RecipeLogic> {
-    public static final RecipeOutputInfoProvider INSTANCE = new RecipeOutputInfoProvider();
+public class RecipeOutputProvider extends CapabilityBlockProvider<RecipeLogic> {
+    public static final RecipeOutputProvider INSTANCE = new RecipeOutputProvider();
 
-    protected RecipeOutputInfoProvider() {
+    protected RecipeOutputProvider() {
         super(Monazite.id("recipe_output_info"));
     }
 

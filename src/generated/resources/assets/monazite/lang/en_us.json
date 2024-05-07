@@ -2,6 +2,7 @@
   "block.monazite.dimension_display.overworld": "Overworld",
   "block.monazite.dimension_display.the_end": "The End",
   "block.monazite.dimension_display.the_nether": "The Nether",
+  "config.jade.plugin_monazite.exhaust_vent_info": "Exhaust Vent Information Display",
   "config.jade.plugin_monazite.maintenance_info": "Maintenance Information Display",
   "config.jade.plugin_monazite.recipe_output_info": "Recipe Outputs Display",
   "config.monazite.option.conciseMode": "Concise Mode",
@@ -10,6 +11,8 @@
   "config.monazite.option.topInformation": "Top Information",
   "key.categories.monazite": "Monazite",
   "key.toggleConciseMode": "Toggle Concise Mode",
+  "monazite.exhaust_vent.blocked": "Blocked",
+  "monazite.exhaust_vent.direction": "Exhaust Vent Direction: %s",
   "monazite.maintenance.broken": "Needs Maintenance",
   "monazite.maintenance.fixed": "Maintenance Fine",
   "monazite.recipe.output": "Recipe Output:"

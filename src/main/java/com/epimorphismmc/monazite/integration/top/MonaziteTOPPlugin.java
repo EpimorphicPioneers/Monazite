@@ -3,6 +3,7 @@ package com.epimorphismmc.monazite.integration.top;
 import com.epimorphismmc.monazite.Monazite;
 import com.epimorphismmc.monazite.config.MonaziteConfigHolder;
 import com.epimorphismmc.monazite.integration.top.element.FluidStackElement;
+import com.epimorphismmc.monazite.integration.top.provider.ExhaustVentInfoProvider;
 import com.epimorphismmc.monazite.integration.top.provider.MaintenanceInfoProvider;
 import com.epimorphismmc.monazite.integration.top.provider.RecipeOutputInfoProvider;
 import com.gregtechceu.gtceu.config.ConfigHolder;
@@ -33,6 +34,8 @@ public class MonaziteTOPPlugin {
         if (ConfigHolder.INSTANCE.machines.enableMaintenance && MonaziteConfigHolder.INSTANCE.topInformation.displayMaintenanceInfo) {
             oneProbe.registerProvider(new MaintenanceInfoProvider());
         }
+
+        oneProbe.registerProvider(new ExhaustVentInfoProvider());
     }
 
     public static void registerElements(ITheOneProbe oneProbe) {

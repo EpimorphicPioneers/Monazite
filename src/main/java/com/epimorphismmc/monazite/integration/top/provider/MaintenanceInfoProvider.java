@@ -42,40 +42,6 @@ public class MaintenanceInfoProvider extends CapabilityInfoProvider<IMaintenance
                 for (byte i = 0; i < 6; i++) {
                     if (((problems >> i) & 1) == 0) {
                         IProbeInfo horizontalPane = verticalPane.horizontal(verticalPane.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER));
-//                        ItemStack stack = ItemStack.EMPTY;
-//                        String text = "";
-//                        switch (i) {
-//                            case 0: {
-//                                stack = ItemUtils.getToolItem(GTToolType.WRENCH);
-//                                text = "gtceu.multiblock.universal.problem.wrench";
-//                                break;
-//                            }
-//                            case 1: {
-//                                stack = ItemUtils.getToolItem(GTToolType.SCREWDRIVER);
-//                                text = "gtceu.multiblock.universal.problem.screwdriver";
-//                                break;
-//                            }
-//                            case 2: {
-//                                stack = ItemUtils.getToolItem(GTToolType.SOFT_MALLET);
-//                                text = "gtceu.multiblock.universal.problem.soft_mallet";
-//                                break;
-//                            }
-//                            case 3: {
-//                                stack = ItemUtils.getToolItem(GTToolType.HARD_HAMMER);
-//                                text = "gtceu.multiblock.universal.problem.hard_hammer";
-//                                break;
-//                            }
-//                            case 4: {
-//                                stack = ItemUtils.getToolItem(GTToolType.WIRE_CUTTER);
-//                                text = "gtceu.multiblock.universal.problem.wire_cutter";
-//                                break;
-//                            }
-//                            case 5: {
-//                                stack = ItemUtils.getToolItem(GTToolType.CROWBAR);
-//                                text = "gtceu.multiblock.universal.problem.crowbar";
-//                                break;
-//                            }
-//                        }
                         var tuple = MoUtils.getMaintenanceText(i);
                         horizontalPane.item(tuple.getA(), new ItemStyle().width(16).height(16)).text(Component.translatable(tuple.getB(), " "));
                     }
