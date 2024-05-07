@@ -1,6 +1,7 @@
 package com.epimorphismmc.monazite.integration.jade;
 
 import com.epimorphismmc.monazite.config.MonaziteConfigHolder;
+import com.epimorphismmc.monazite.integration.jade.provider.AutoOutputBlockProvider;
 import com.epimorphismmc.monazite.integration.jade.provider.ExhaustVentBlockProvider;
 import com.epimorphismmc.monazite.integration.jade.provider.MaintenanceBlockProvider;
 import com.epimorphismmc.monazite.integration.jade.provider.RecipeOutputProvider;
@@ -26,6 +27,7 @@ public class MonaziteJadePlugin implements IWailaPlugin {
         }
 
         registration.registerBlockDataProvider(ExhaustVentBlockProvider.INSTANCE, BlockEntity.class);
+        registration.registerBlockDataProvider(AutoOutputBlockProvider.INSTANCE, BlockEntity.class);
     }
 
     @Override
@@ -39,6 +41,7 @@ public class MonaziteJadePlugin implements IWailaPlugin {
         }
 
         registration.registerBlockComponent(ExhaustVentBlockProvider.INSTANCE, Block.class);
+        registration.registerBlockComponent(AutoOutputBlockProvider.INSTANCE, Block.class);
     }
 
 }

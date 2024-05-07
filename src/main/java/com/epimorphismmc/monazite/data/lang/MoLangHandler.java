@@ -18,6 +18,7 @@ public class MoLangHandler {
         provider.add("config.jade.plugin_monazite.recipe_output_info", "Recipe Outputs Display");
         provider.add("config.jade.plugin_monazite.maintenance_info", "Maintenance Information Display");
         provider.add("config.jade.plugin_monazite.exhaust_vent_info", "Exhaust Vent Information Display");
+        provider.add("config.jade.plugin_monazite.auto_output_info", "Auto Output Information Display");
         provider.add("key.categories.monazite", "Monazite");
         provider.add("key.toggleConciseMode", "Toggle Concise Mode");
         provider.add("config.monazite.option.topInformation", "Top Information");
@@ -42,6 +43,7 @@ public class MoLangHandler {
         provider.add("config.jade.plugin_monazite.recipe_output_info", "配方输出显示");
         provider.add("config.jade.plugin_monazite.maintenance_info", "维护信息显示");
         provider.add("config.jade.plugin_monazite.exhaust_vent_info", "排气口信息显示");
+        provider.add("config.jade.plugin_monazite.auto_output_info", "自动输出信息显示");
         provider.add("key.categories.monazite", "Monazite");
         provider.add("key.toggleConciseMode", "开/关简洁模式");
         provider.add("config.monazite.option.topInformation", "顶部信息");
