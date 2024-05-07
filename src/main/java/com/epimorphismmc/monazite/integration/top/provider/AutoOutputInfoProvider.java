@@ -27,21 +27,20 @@ public class AutoOutputInfoProvider implements IProbeInfoProvider {
         var autoOutputItem = CapabilityUtils.getAutoOutputItemMachine(level, pos, dir);
         var autoOutputFluid = CapabilityUtils.getAutoOutputFluidMachine(level, pos, dir);
 
-        IProbeInfo verticalPane = iProbeInfo.vertical(iProbeInfo.defaultLayoutStyle().spacing(0));
         if (autoOutputItem != null) {
             var direction = autoOutputItem.getOutputFacingItems();
-            addAutoOutputInfo(verticalPane, player, level, pos, direction, "monazite.auto_output.item", autoOutputItem.isAllowInputFromOutputSideItems(), autoOutputItem.isAutoOutputItems());
+            addAutoOutputInfo(iProbeInfo, player, level, pos, direction, "monazite.auto_output.item", autoOutputItem.isAllowInputFromOutputSideItems(), autoOutputItem.isAutoOutputItems());
         }
 
         if (autoOutputFluid != null) {
             var direction = autoOutputFluid.getOutputFacingFluids();
-            addAutoOutputInfo(verticalPane, player, level, pos, direction, "monazite.auto_output.fluid", autoOutputFluid.isAllowInputFromOutputSideFluids(), autoOutputFluid.isAutoOutputFluids());
+            addAutoOutputInfo(iProbeInfo, player, level, pos, direction, "monazite.auto_output.fluid", autoOutputFluid.isAllowInputFromOutputSideFluids(), autoOutputFluid.isAutoOutputFluids());
         }
     }
 
-    private void addAutoOutputInfo(IProbeInfo verticalPane, Player player, Level level, BlockPos blockPos, Direction direction, String text, boolean allowInput, boolean auto) {
+    private void addAutoOutputInfo(IProbeInfo iProbeInfo, Player player, Level level, BlockPos blockPos, Direction direction, String text, boolean allowInput, boolean auto) {
         if (direction != null) {
-            IProbeInfo horizontalPane = verticalPane.horizontal(verticalPane.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER));
+            IProbeInfo horizontalPane = iProbeInfo.horizontal(iProbeInfo.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER));
             horizontalPane.text(CompoundText.create().info(Component.translatable(text, StringUtils.capitalize(direction.getName()) + " ")));
             if (player.isShiftKeyDown()) {
                 if (level != null) {

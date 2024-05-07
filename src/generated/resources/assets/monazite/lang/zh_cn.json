@@ -16,6 +16,8 @@
   "monazite.auto_output.auto": "自动",
   "monazite.auto_output.fluid": "流体输出方向: %s",
   "monazite.auto_output.item": "物品输出方向: %s",
+  "monazite.cable.amperage": "电流: ",
+  "monazite.cable.voltage": "电压: ",
   "monazite.exhaust_vent.blocked": "受阻",
   "monazite.exhaust_vent.direction": "排气口方向: %s",
   "monazite.maintenance.broken": "需要维护",

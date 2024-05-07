@@ -3,10 +3,7 @@ package com.epimorphismmc.monazite.integration.top;
 import com.epimorphismmc.monazite.Monazite;
 import com.epimorphismmc.monazite.config.MonaziteConfigHolder;
 import com.epimorphismmc.monazite.integration.top.element.FluidStackElement;
-import com.epimorphismmc.monazite.integration.top.provider.AutoOutputInfoProvider;
-import com.epimorphismmc.monazite.integration.top.provider.ExhaustVentInfoProvider;
-import com.epimorphismmc.monazite.integration.top.provider.MaintenanceInfoProvider;
-import com.epimorphismmc.monazite.integration.top.provider.RecipeOutputInfoProvider;
+import com.epimorphismmc.monazite.integration.top.provider.*;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 import mcjty.theoneprobe.TheOneProbe;
 import mcjty.theoneprobe.api.IElement;
@@ -38,6 +35,7 @@ public class MonaziteTOPPlugin {
 
         oneProbe.registerProvider(new ExhaustVentInfoProvider());
         oneProbe.registerProvider(new AutoOutputInfoProvider());
+        oneProbe.registerProvider(new CableInfoProvider());
     }
 
     public static void registerElements(ITheOneProbe oneProbe) {

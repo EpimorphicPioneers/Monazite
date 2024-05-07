@@ -16,6 +16,8 @@
   "monazite.auto_output.auto": "Auto",
   "monazite.auto_output.fluid": "Fluid Output Direction: %s",
   "monazite.auto_output.item": "Item Output Direction: %s",
+  "monazite.cable.amperage": "Amperage: ",
+  "monazite.cable.voltage": "Voltage: ",
   "monazite.exhaust_vent.blocked": "Blocked",
   "monazite.exhaust_vent.direction": "Exhaust Vent Direction: %s",
   "monazite.maintenance.broken": "Needs Maintenance",
