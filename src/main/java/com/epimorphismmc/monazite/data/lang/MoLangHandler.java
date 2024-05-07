@@ -11,6 +11,10 @@ public class MoLangHandler {
         provider.add("monazite.recipe.output", "Recipe Output:");
         provider.add("monazite.maintenance.broken", "Needs Maintenance");
         provider.add("monazite.maintenance.fixed", "Maintenance Fine");
+        provider.add("monazite.auto_output.item", "Item Output Direction: %s");
+        provider.add("monazite.auto_output.fluid", "Fluid Output Direction: %s");
+        provider.add("monazite.auto_output.auto", "Auto");
+        provider.add("monazite.auto_output.allow_input", "Allows Input");
         provider.add("config.jade.plugin_monazite.recipe_output_info", "Recipe Outputs Display");
         provider.add("config.jade.plugin_monazite.maintenance_info", "Maintenance Information Display");
         provider.add("config.jade.plugin_monazite.exhaust_vent_info", "Exhaust Vent Information Display");
@@ -31,6 +35,10 @@ public class MoLangHandler {
         provider.add("monazite.recipe.output", "配方输出:");
         provider.add("monazite.maintenance.broken", "需要维护");
         provider.add("monazite.maintenance.fixed", "无需维护");
+        provider.add("monazite.auto_output.item", "物品输出方向: %s");
+        provider.add("monazite.auto_output.fluid", "流体输出方向: %s");
+        provider.add("monazite.auto_output.auto", "自动");
+        provider.add("monazite.auto_output.allow_input", "允许输入");
         provider.add("config.jade.plugin_monazite.recipe_output_info", "配方输出显示");
         provider.add("config.jade.plugin_monazite.maintenance_info", "维护信息显示");
         provider.add("config.jade.plugin_monazite.exhaust_vent_info", "排气口信息显示");
