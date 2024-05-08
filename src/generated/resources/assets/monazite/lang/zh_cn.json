@@ -18,6 +18,7 @@
   "config.monazite.option.oreVeinDisplay": "矿脉显示",
   "config.monazite.option.topInformation": "顶部信息",
   "config.monazite.option.useNHDimensionDisplay": "使用NH样式的维度显示",
+  "config.screen.monazite": "Monazite",
   "key.categories.monazite": "Monazite",
   "key.toggleConciseMode": "开/关简洁模式",
   "monazite.auto_output.allow_input": "允许输入",

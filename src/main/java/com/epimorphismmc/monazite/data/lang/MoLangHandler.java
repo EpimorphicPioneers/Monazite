@@ -24,6 +24,7 @@ public class MoLangHandler {
         provider.add("config.jade.plugin_monazite.cable_info", "Cable Information Display");
         provider.add("key.categories.monazite", "Monazite");
         provider.add("key.toggleConciseMode", "Toggle Concise Mode");
+        provider.add("config.screen.monazite", "Monazite");
         provider.add("config.monazite.option.topInformation", "Top Information");
         provider.add("config.monazite.option.displayRecipeOutputs", "Recipe Outputs Display");
         provider.add("config.monazite.option.conciseMode", "Concise Mode");
@@ -58,6 +59,7 @@ public class MoLangHandler {
         provider.add("config.jade.plugin_monazite.cable_info", "线缆信息显示");
         provider.add("key.categories.monazite", "Monazite");
         provider.add("key.toggleConciseMode", "开/关简洁模式");
+        provider.add("config.screen.monazite", "Monazite");
         provider.add("config.monazite.option.topInformation", "顶部信息");
         provider.add("config.monazite.option.oreVeinDisplay", "矿脉显示");
         provider.add("config.monazite.option.displayRecipeOutputs", "配方输出显示");

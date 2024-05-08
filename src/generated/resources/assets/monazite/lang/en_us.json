@@ -17,6 +17,7 @@
   "config.monazite.option.itemsPerLine": "Items Per Line",
   "config.monazite.option.topInformation": "Top Information",
   "config.monazite.option.useNHDimensionDisplay": "Using NH-style Dimension Display",
+  "config.screen.monazite": "Monazite",
   "key.categories.monazite": "Monazite",
   "key.toggleConciseMode": "Toggle Concise Mode",
   "monazite.auto_output.allow_input": "Allows Input",
