@@ -1,5 +1,6 @@
 package com.epimorphismmc.monazite.mixins.gtm;
 
+import com.epimorphismmc.monazite.config.MonaziteConfigHolder;
 import com.gregtechceu.gtceu.api.data.worldgen.GTOreDefinition;
 import com.gregtechceu.gtceu.api.data.worldgen.bedrockfluid.BedrockFluidDefinition;
 import com.gregtechceu.gtceu.integration.GTOreVeinWidget;
@@ -66,7 +67,7 @@ public abstract class GTOreVeinWidgetMixin extends WidgetGroup {
 
     @Unique
     private void setupDimensionDisplay(CallbackInfo ci) {
-        if (this.dimensionFilter != null) {
+        if (MonaziteConfigHolder.INSTANCE.oreVeinDisplay.useNHDimensionDisplay && this.dimensionFilter != null) {
             int rowSlots = (width - 10) / 16 - 1;
             int interval = (width - 10 - 16 * rowSlots) / (rowSlots - 1);
 

@@ -39,11 +39,28 @@ public class MonaziteConfigHolder {
         @Configurable
         @Configurable.Comment({"If true, the maintenance information of the current machine will be displayed.", "Default: true"})
         public boolean displayMaintenanceInfo = true; // default true
+
+        @Configurable
+        @Configurable.Comment({"If true, the exhaust vent information of the current machine will be displayed.", "Default: true"})
+        public boolean displayExhaustVentInfo = true; // default true
+
+        @Configurable
+        @Configurable.Comment({"If true, the auto output information of the current machine will be displayed.", "Default: true"})
+        public boolean displayAutoOutputInfo = true; // default true
+
+        @Configurable
+        @Configurable.Comment({"If true, the voltage and amperage of the current cable will be displayed.", "Default: true"})
+        public boolean displayCableInfo = true; // default true
     }
 
     public static class OreVeinDisplayConfigs {
+
         @Configurable
-        @Configurable.Comment("To add custom display dimensions.")
+        @Configurable.Comment({"If true, the ore vein display will be displayed using an NH-style dimension.", "Default: true"})
+        public boolean useNHDimensionDisplay = true; // default true
+
+        @Configurable
+        @Configurable.Comment({"To add custom display dimensions."})
         public String[] dimensions = new String[0];
     }
 

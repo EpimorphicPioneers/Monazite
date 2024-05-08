@@ -1,10 +1,7 @@
 package com.epimorphismmc.monazite.integration.jade;
 
 import com.epimorphismmc.monazite.config.MonaziteConfigHolder;
-import com.epimorphismmc.monazite.integration.jade.provider.AutoOutputBlockProvider;
-import com.epimorphismmc.monazite.integration.jade.provider.ExhaustVentBlockProvider;
-import com.epimorphismmc.monazite.integration.jade.provider.MaintenanceBlockProvider;
-import com.epimorphismmc.monazite.integration.jade.provider.RecipeOutputProvider;
+import com.epimorphismmc.monazite.integration.jade.provider.*;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -26,8 +23,17 @@ public class MonaziteJadePlugin implements IWailaPlugin {
             registration.registerBlockDataProvider(MaintenanceBlockProvider.INSTANCE, BlockEntity.class);
         }
 
-        registration.registerBlockDataProvider(ExhaustVentBlockProvider.INSTANCE, BlockEntity.class);
-        registration.registerBlockDataProvider(AutoOutputBlockProvider.INSTANCE, BlockEntity.class);
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayExhaustVentInfo) {
+            registration.registerBlockDataProvider(ExhaustVentBlockProvider.INSTANCE, BlockEntity.class);
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayAutoOutputInfo) {
+            registration.registerBlockDataProvider(AutoOutputBlockProvider.INSTANCE, BlockEntity.class);
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayCableInfo) {
+            registration.registerBlockDataProvider(CableBlockProvider.INSTANCE, BlockEntity.class);
+        }
     }
 
     @Override
@@ -40,8 +46,17 @@ public class MonaziteJadePlugin implements IWailaPlugin {
             registration.registerBlockComponent(MaintenanceBlockProvider.INSTANCE, Block.class);
         }
 
-        registration.registerBlockComponent(ExhaustVentBlockProvider.INSTANCE, Block.class);
-        registration.registerBlockComponent(AutoOutputBlockProvider.INSTANCE, Block.class);
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayExhaustVentInfo) {
+            registration.registerBlockComponent(ExhaustVentBlockProvider.INSTANCE, Block.class);
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayAutoOutputInfo) {
+            registration.registerBlockComponent(AutoOutputBlockProvider.INSTANCE, Block.class);
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayCableInfo) {
+            registration.registerBlockComponent(CableBlockProvider.INSTANCE, Block.class);
+        }
     }
 
 }

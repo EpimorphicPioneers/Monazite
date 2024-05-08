@@ -33,9 +33,17 @@ public class MonaziteTOPPlugin {
             oneProbe.registerProvider(new MaintenanceInfoProvider());
         }
 
-        oneProbe.registerProvider(new ExhaustVentInfoProvider());
-        oneProbe.registerProvider(new AutoOutputInfoProvider());
-        oneProbe.registerProvider(new CableInfoProvider());
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayExhaustVentInfo) {
+            oneProbe.registerProvider(new ExhaustVentInfoProvider());
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayAutoOutputInfo) {
+            oneProbe.registerProvider(new AutoOutputInfoProvider());
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayCableInfo) {
+            oneProbe.registerProvider(new CableInfoProvider());
+        }
     }
 
     public static void registerElements(ITheOneProbe oneProbe) {
