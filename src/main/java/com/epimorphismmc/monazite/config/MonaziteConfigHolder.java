@@ -60,6 +60,10 @@ public class MonaziteConfigHolder {
         public boolean useNHDimensionDisplay = true; // default true
 
         @Configurable
+        @Configurable.Comment({"If true, the dimension display will show dimension tier.", "Default: true"})
+        public boolean showDimensionTier = false; // default false
+
+        @Configurable
         @Configurable.Comment({"To add custom display dimensions."})
         public String[] dimensions = new String[0];
     }

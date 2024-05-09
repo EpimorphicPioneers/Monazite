@@ -1,7 +1,7 @@
 {
-  "block.monazite.dimension_display.overworld": "主世界",
-  "block.monazite.dimension_display.the_end": "末地",
-  "block.monazite.dimension_display.the_nether": "下界",
+  "block.monazite.dimension_display.minecraft.overworld": "主世界",
+  "block.monazite.dimension_display.minecraft.the_end": "末地",
+  "block.monazite.dimension_display.minecraft.the_nether": "下界",
   "config.jade.plugin_monazite.auto_output_info": "自动输出信息显示",
   "config.jade.plugin_monazite.cable_info": "线缆信息显示",
   "config.jade.plugin_monazite.exhaust_vent_info": "排气口信息显示",
@@ -16,6 +16,7 @@
   "config.monazite.option.displayRecipeOutputs": "配方输出显示",
   "config.monazite.option.itemsPerLine": "每行物品数",
   "config.monazite.option.oreVeinDisplay": "矿脉显示",
+  "config.monazite.option.showDimensionTier": "显示维度层级",
   "config.monazite.option.topInformation": "顶部信息",
   "config.monazite.option.useNHDimensionDisplay": "使用NH样式的维度显示",
   "config.screen.monazite": "Monazite",

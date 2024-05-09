@@ -7,9 +7,9 @@ public class MonaziteValues {
             MODID_JEI = "jei";
 
     public static final String[] DIM = new String[]{
-            "overworld",
-            "the_end",
-            "the_nether"
+            "minecraft:overworld$0",
+            "minecraft:the_nether$0",
+            "minecraft:the_end$0"
     };
 
 }

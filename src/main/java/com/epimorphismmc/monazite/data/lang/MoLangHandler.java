@@ -34,10 +34,11 @@ public class MoLangHandler {
         provider.add("config.monazite.option.displayAutoOutputInfo", "Auto Output Information Display");
         provider.add("config.monazite.option.displayCableInfo", "Cable Information Display");
         provider.add("config.monazite.option.useNHDimensionDisplay", "Using NH-style Dimension Display");
+        provider.add("config.monazite.option.showDimensionTier", "Showing Dimension Tier");
         provider.add("config.monazite.option.dimensions", "Custom Dimensions");
-        provider.add("block.monazite.dimension_display.overworld", "Overworld");
-        provider.add("block.monazite.dimension_display.the_nether", "The Nether");
-        provider.add("block.monazite.dimension_display.the_end", "The End");
+        provider.add("block.monazite.dimension_display.minecraft.overworld", "Overworld");
+        provider.add("block.monazite.dimension_display.minecraft.the_nether", "The Nether");
+        provider.add("block.monazite.dimension_display.minecraft.the_end", "The End");
     }
 
     public static void init(RegistrateCNLangProvider provider) {
@@ -70,9 +71,10 @@ public class MoLangHandler {
         provider.add("config.monazite.option.displayAutoOutputInfo", "自动输出信息显示");
         provider.add("config.monazite.option.displayCableInfo", "线缆信息显示");
         provider.add("config.monazite.option.useNHDimensionDisplay", "使用NH样式的维度显示");
+        provider.add("config.monazite.option.showDimensionTier", "显示维度层级");
         provider.add("config.monazite.option.dimensions", "自定义维度");
-        provider.add("block.monazite.dimension_display.overworld", "主世界");
-        provider.add("block.monazite.dimension_display.the_nether", "下界");
-        provider.add("block.monazite.dimension_display.the_end", "末地");
+        provider.add("block.monazite.dimension_display.minecraft.overworld", "主世界");
+        provider.add("block.monazite.dimension_display.minecraft.the_nether", "下界");
+        provider.add("block.monazite.dimension_display.minecraft.the_end", "末地");
     }
 }
