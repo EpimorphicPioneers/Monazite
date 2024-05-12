@@ -56,10 +56,6 @@ jobs:
           loaders: forge
           files: build/libs/${{ steps.properties.outputs.mod_id }}-${{ steps.var.outputs.version }}.jar
 
-          github-token: ${{ secrets.MYGITHUB_TOKEN }}
-
-          modrinth-id: KvSy350p
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-
-          curseforge-id: 1015315
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
