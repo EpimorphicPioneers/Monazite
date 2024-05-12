@@ -24,14 +24,9 @@ dependencies {
 
     // LDLib
     modApi(forge.ldlib.forge) { transitive = false }
-    include(forge.ldlib.forge)
 
     // Registrate
-    modApi(include("com.tterrag.registrate:Registrate:${forge.versions.registrate.get()}"))
-
-    // Create and its dependencies
-    modCompileOnly("com.simibubi.create:create-${libs.versions.minecraft.get()}:${forge.versions.createForge.get()}:all") { transitive = false }
-    modCompileOnly forge.flywheel
+    modApi("com.tterrag.registrate:Registrate:${forge.versions.registrate.get()}")
 
     // JEI
     modCompileOnly(forge.jei.common.api) { transitive = false }
@@ -48,21 +43,10 @@ dependencies {
     modImplementation forge.emi
 
     // TOP
-//    modCompileOnly(forge.theoneprobe) { transitive = false }
     modImplementation(forge.theoneprobe) { transitive = false }
 
     // Jade
     modImplementation(forge.jade)
-//    modCompileOnly(forge.jade)
-
-    // AE2
-    modImplementation(forge.ae2) { transitive = false }
-
-    //AlmostUnified
-    modImplementation(forge.almostUnified.forge)
-
-    // KJS
-    modImplementation forge.kubejs
 
     // Mixin Extras
     implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:${this.forge.versions.mixinextras.get()}"))
@@ -70,16 +54,8 @@ dependencies {
 
     // Configuration
     modApi(forge.configuration)
-    include(forge.configuration)
-
-    // Shimmer
-    modImplementation(forge.shimmer.forge) { transitive = false }
-    modImplementation("maven.modrinth:embeddium:0.2.10+mc1.20.1")
-    modImplementation("maven.modrinth:oculus:1.20.1-1.6.9")
 
     // GTM
     modImplementation("maven.modrinth:gregtechceu-modern:mc1.20.1-1.2.1")
 
-    // Runtime only testing mods
-    //modRuntimeOnly(forge.worldStripper)
 }
