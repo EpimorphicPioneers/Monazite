@@ -1,7 +1,7 @@
 package com.epimorphismmc.monazite.integration.jade.provider;
 
 import com.epimorphismmc.monazite.Monazite;
-import com.epimorphismmc.monazite.utils.LangUtils;
+import com.epimorphismmc.monazite.utils.FormattingUtils;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.common.block.CableBlock;
 import com.gregtechceu.gtceu.common.blockentity.CableBlockEntity;
@@ -39,9 +39,9 @@ public class CableBlockProvider implements IBlockComponentProvider, IServerDataP
 
                 iTooltip.add(Component.translatable("monazite.cable.amperage"));
                 if (amperage != 0) {
-                    iTooltip.append(Component.literal(LangUtils.DECIMAL_FORMAT_1F.format(amperage) + "A / "));
+                    iTooltip.append(Component.literal(FormattingUtils.DECIMAL_FORMAT_1F.format(amperage) + "A / "));
                 }
-                iTooltip.append(Component.literal(LangUtils.DECIMAL_FORMAT_1F.format(tag.getDouble("maxAmperage")) + "A"));
+                iTooltip.append(Component.literal(FormattingUtils.DECIMAL_FORMAT_1F.format(tag.getDouble("maxAmperage")) + "A"));
             }
         }
     }

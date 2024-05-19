@@ -1,7 +1,7 @@
 package com.epimorphismmc.monazite.integration.top.provider;
 
 import com.epimorphismmc.monazite.Monazite;
-import com.epimorphismmc.monazite.utils.LangUtils;
+import com.epimorphismmc.monazite.utils.FormattingUtils;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.common.block.CableBlock;
 import com.gregtechceu.gtceu.common.blockentity.CableBlockEntity;
@@ -36,9 +36,9 @@ public class CableInfoProvider implements IProbeInfoProvider {
                 horizontalPane = iProbeInfo.horizontal(iProbeInfo.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER));
                 horizontalPane.text(Component.translatable("monazite.cable.amperage"));
                 if (amperage != 0) {
-                    horizontalPane.text(LangUtils.DECIMAL_FORMAT_1F.format(cable.getAverageAmperage()) + "A / ");
+                    horizontalPane.text(FormattingUtils.DECIMAL_FORMAT_1F.format(cable.getAverageAmperage()) + "A / ");
                 }
-                horizontalPane.text(LangUtils.DECIMAL_FORMAT_1F.format(cable.getMaxAmperage()) + "A");
+                horizontalPane.text(FormattingUtils.DECIMAL_FORMAT_1F.format(cable.getMaxAmperage()) + "A");
             }
         }
     }

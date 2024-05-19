@@ -23,12 +23,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
 
-import static com.epimorphismmc.monazite.common.data.MoBlocks.*;
+import static com.epimorphismmc.monazite.api.MonaziteAPI.ALL_DIM_DISPLAY_BLOCKS;
+import static com.epimorphismmc.monazite.api.MonaziteAPI.DIM_TIER;
 
 @Mixin(value = GTOreVeinWidget.class, remap = false)
 public abstract class GTOreVeinWidgetMixin extends WidgetGroup {
@@ -43,8 +45,7 @@ public abstract class GTOreVeinWidgetMixin extends WidgetGroup {
     @Final
     private Set<ResourceKey<Level>> dimensionFilter;
 
-    public GTOreVeinWidgetMixin() {
-    }
+    public GTOreVeinWidgetMixin() {/**/}
 
     @Inject(
             method = {"setupText(Lcom/gregtechceu/gtceu/api/data/worldgen/GTOreDefinition;)V"},
@@ -56,7 +57,7 @@ public abstract class GTOreVeinWidgetMixin extends WidgetGroup {
             cancellable = true
     )
     private void setupText(GTOreDefinition oreDefinition, CallbackInfo ci) {
-        monazite$setupDimensionDisplay(ci);
+        monazite$setupDimensionDisplay(ci, 80);
     }
 
     @Inject(
@@ -69,33 +70,35 @@ public abstract class GTOreVeinWidgetMixin extends WidgetGroup {
             cancellable = true
     )
     private void setupText(BedrockFluidDefinition fluid, CallbackInfo ci) {
-        monazite$setupDimensionDisplay(ci);
+        monazite$setupDimensionDisplay(ci, 60);
     }
 
     @Unique
-    private void monazite$setupDimensionDisplay(CallbackInfo ci) {
+    private void monazite$setupDimensionDisplay(CallbackInfo ci, int yPosition) {
         if (MonaziteConfigHolder.INSTANCE.oreVeinDisplay.useNHDimensionDisplay && this.dimensionFilter != null) {
-            int rowSlots = (width - 10) / 16 - 1;
-            int interval = (width - 10 - 16 * rowSlots) / (rowSlots - 1);
+            int interval = 2;
+            int rowSlots = (width - 10 + interval) / (16 + interval);
 
-            int count = 0;
-            for (var dimension : dimensionFilter) {
-                var location = dimension.location();
+            var locations = dimensionFilter.stream()
+                    .map(ResourceKey::location)
+                    .sorted(Comparator.comparingInt(DIM_TIER::getInt))
+                    .toArray(ResourceLocation[]::new);
+            var transfer = new ItemStackTransfer(locations.length);
+            for (int i = 0; i < locations.length; i++) {
+                var location = locations[i];
                 var item = monazite$getDisplayItem(location);
-                int row = Math.floorDiv(count, rowSlots);
-                var transfer = new ItemStackTransfer();
-                SlotWidget dimSlot = new SlotWidget(transfer, count,
-                        5 + (16 + interval) * (count - row * rowSlots),
-                        80 + 18 * row,
+                int row = Math.floorDiv(i, rowSlots);
+                SlotWidget dimSlot = new SlotWidget(transfer, i,
+                        5 + (16 + interval) * (i - row * rowSlots),
+                        yPosition + 18 * row,
                         false, false).setIngredientIO(IngredientIO.BOTH);
                 if (item != null) {
-                    transfer.setStackInSlot(0, item);
+                    transfer.setStackInSlot(i, item);
                 } else {
-                    transfer.setStackInSlot(0, Blocks.GRASS.asItem().getDefaultInstance());
+                    transfer.setStackInSlot(i, Blocks.GRASS_BLOCK.asItem().getDefaultInstance());
                     dimSlot.setHoverTooltips(location.toLanguageKey());
                 }
                 this.addWidget(dimSlot.setBackgroundTexture(IGuiTexture.EMPTY));
-                count++;
             }
             ci.cancel();
         }

@@ -57,5 +57,5 @@ jobs:
           files: build/libs/${{ steps.properties.outputs.mod_id }}-${{ steps.var.outputs.version }}.jar
 
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          modrinth-token: ${{ secrets.Q_MODRINTH_TOKEN }}
+          curseforge-token: ${{ secrets.Q_CURSEFORGE_TOKEN }}

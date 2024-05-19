@@ -9,8 +9,8 @@ import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = Monazite.MODID,  bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 @OnlyIn(Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = Monazite.MODID,  bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ForgeClientEventHandler {
     @SubscribeEvent
     public static void onKeyInput(InputEvent.Key event) {

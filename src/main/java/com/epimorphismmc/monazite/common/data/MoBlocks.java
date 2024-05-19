@@ -9,23 +9,23 @@ import com.lowdragmc.lowdraglib.Platform;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 
-import java.util.*;
-import java.util.function.Supplier;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 import java.util.regex.Pattern;
 
-import static com.epimorphismmc.monazite.common.registry.MoRegistrate.MO_REGISTRATE;
+import static com.epimorphismmc.monazite.api.MonaziteAPI.*;
+import static com.epimorphismmc.monazite.common.registry.MoRegistrate.*;
 
 @SuppressWarnings("removal")
 public class MoBlocks {
 
     private static final Pattern DIMENSION_PATTERN = Pattern.compile("(?<dimension>[^$]+)\\$(?<tier>[0-9]+)$");
-
-    public static final Object2ObjectOpenHashMap<ResourceLocation, Supplier<Block>> ALL_DIM_DISPLAY_BLOCKS = new Object2ObjectOpenHashMap<>();
 
     private static BlockEntry<Block> createDimensionDisplay(ResourceLocation dimension, int tier) {
         return MO_REGISTRATE.block("dimension_display.%s".formatted(dimension.toLanguageKey()),
@@ -54,6 +54,7 @@ public class MoBlocks {
                 var tier = Integer.parseInt(matcher.group("tier"));
                 var loc = ResourceLocation.tryParse(dimension);
                 if (loc != null) {
+                    DIM_TIER.put(loc, tier);
                     ALL_DIM_DISPLAY_BLOCKS.put(loc, createDimensionDisplay(new ResourceLocation(dimension), tier));
                 }
             }

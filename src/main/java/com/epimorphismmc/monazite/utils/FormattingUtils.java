@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class LangUtils {
+public class FormattingUtils {
     private static final TreeMap<BigInteger, String> UNITS = new TreeMap<>();
     public static final DecimalFormat DECIMAL_FORMAT_0F = new DecimalFormat("#");
     public static final DecimalFormat DECIMAL_FORMAT_1F = new DecimalFormat("#.#");
