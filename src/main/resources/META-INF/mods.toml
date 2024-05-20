@@ -68,6 +68,10 @@ description='''${mod_description}'''
     versionRange="[1.0.0,)"
     ordering="AFTER"
     side="BOTH"
+    [dependencies.${mod_id}.mc-publish]
+        ignore=false
+        modrinth="gregtechceu-modern"
+        curseforge="gregtechceu-modern"
 [[dependencies.${mod_id}]]
     modId="jade"
     mandatory=false
@@ -80,6 +84,10 @@ description='''${mod_description}'''
     versionRange="[1.20.1-9.0.0,)"
     ordering="NONE"
     side="BOTH"
+    [dependencies.${mod_id}.mc-publish]
+        ignore=false
+        modrinth="the-one-probe"
+        curseforge="the-one-probe"
 
 [mc-publish]
 curseforge=1015315
