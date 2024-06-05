@@ -31,7 +31,7 @@
   "monazite.cable.voltage": "Voltage: ",
   "monazite.exhaust_vent.blocked": "Blocked",
   "monazite.exhaust_vent.direction": "Exhaust Vent Direction: %s",
-  "monazite.machine_mode": "Machine Mode: %s",
+  "monazite.machine_mode": "Machine Mode: ",
   "monazite.maintenance.broken": "Needs Maintenance",
   "monazite.maintenance.fixed": "Maintenance Fine",
   "monazite.recipe.output": "Recipe Output:"

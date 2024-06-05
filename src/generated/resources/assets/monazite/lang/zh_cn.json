@@ -32,7 +32,7 @@
   "monazite.cable.voltage": "电压: ",
   "monazite.exhaust_vent.blocked": "受阻",
   "monazite.exhaust_vent.direction": "排气口方向: %s",
-  "monazite.machine_mode": "机器模式：%s",
+  "monazite.machine_mode": "机器模式：",
   "monazite.maintenance.broken": "需要维护",
   "monazite.maintenance.fixed": "无需维护",
   "monazite.recipe.output": "配方输出:"
