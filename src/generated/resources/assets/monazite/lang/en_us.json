@@ -9,6 +9,7 @@
   "config.jade.plugin_monazite.maintenance_info": "Maintenance Information Display",
   "config.jade.plugin_monazite.multiblock_structure": "Multiblock Structure Display",
   "config.jade.plugin_monazite.recipe_output_info": "Recipe Outputs Display",
+  "config.jade.plugin_monazite.stained_color": "Stained Color Display",
   "config.monazite.option.conciseMode": "Concise Mode",
   "config.monazite.option.dimensions": "Custom Dimensions",
   "config.monazite.option.displayAutoOutputInfo": "Auto Output Information Display",
@@ -16,7 +17,9 @@
   "config.monazite.option.displayExhaustVentInfo": "Exhaust Vent Information Display",
   "config.monazite.option.displayMachineMode": "Display Machine Mode",
   "config.monazite.option.displayMaintenanceInfo": "Maintenance Information Display",
+  "config.monazite.option.displayMulitblockStructure": "Display Mulitblock Structure",
   "config.monazite.option.displayRecipeOutputs": "Recipe Outputs Display",
+  "config.monazite.option.displayStainedColor": "Display Stained Color",
   "config.monazite.option.itemsPerLine": "Items Per Line",
   "config.monazite.option.showDimensionTier": "Showing Dimension Tier",
   "config.monazite.option.topInformation": "Top Information",
@@ -35,5 +38,6 @@
   "monazite.machine_mode": "Machine Mode: ",
   "monazite.maintenance.broken": "Needs Maintenance",
   "monazite.maintenance.fixed": "Maintenance Fine",
-  "monazite.recipe.output": "Recipe Output:"
+  "monazite.recipe.output": "Recipe Output:",
+  "monazite.stained": "Stained: %s"
 }

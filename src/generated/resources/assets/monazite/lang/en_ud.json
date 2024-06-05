@@ -9,6 +9,7 @@
   "config.jade.plugin_monazite.maintenance_info": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ǝɔuɐuǝʇuıɐW",
   "config.jade.plugin_monazite.multiblock_structure": "ʎɐןdsıᗡ ǝɹnʇɔnɹʇS ʞɔoןqıʇןnW",
   "config.jade.plugin_monazite.recipe_output_info": "ʎɐןdsıᗡ sʇndʇnO ǝdıɔǝᴚ",
+  "config.jade.plugin_monazite.stained_color": "ʎɐןdsıᗡ ɹoןoƆ pǝuıɐʇS",
   "config.monazite.option.conciseMode": "ǝpoW ǝsıɔuoƆ",
   "config.monazite.option.dimensions": "suoısuǝɯıᗡ ɯoʇsnƆ",
   "config.monazite.option.displayAutoOutputInfo": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ʇndʇnO oʇnⱯ",
@@ -16,7 +17,9 @@
   "config.monazite.option.displayExhaustVentInfo": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ʇuǝΛ ʇsnɐɥxƎ",
   "config.monazite.option.displayMachineMode": "ǝpoW ǝuıɥɔɐW ʎɐןdsıᗡ",
   "config.monazite.option.displayMaintenanceInfo": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ǝɔuɐuǝʇuıɐW",
+  "config.monazite.option.displayMulitblockStructure": "ǝɹnʇɔnɹʇS ʞɔoןqʇıןnW ʎɐןdsıᗡ",
   "config.monazite.option.displayRecipeOutputs": "ʎɐןdsıᗡ sʇndʇnO ǝdıɔǝᴚ",
+  "config.monazite.option.displayStainedColor": "ɹoןoƆ pǝuıɐʇS ʎɐןdsıᗡ",
   "config.monazite.option.itemsPerLine": "ǝuıꞀ ɹǝԀ sɯǝʇI",
   "config.monazite.option.showDimensionTier": "ɹǝı⟘ uoısuǝɯıᗡ buıʍoɥS",
   "config.monazite.option.topInformation": "uoıʇɐɯɹoɟuI do⟘",
@@ -35,5 +38,6 @@
   "monazite.machine_mode": " :ǝpoW ǝuıɥɔɐW",
   "monazite.maintenance.broken": "ǝɔuɐuǝʇuıɐW spǝǝN",
   "monazite.maintenance.fixed": "ǝuıℲ ǝɔuɐuǝʇuıɐW",
-  "monazite.recipe.output": ":ʇndʇnO ǝdıɔǝᴚ"
+  "monazite.recipe.output": ":ʇndʇnO ǝdıɔǝᴚ",
+  "monazite.stained": "%s :pǝuıɐʇS"
 }
