@@ -52,6 +52,10 @@ public class MonaziteTOPPlugin {
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayMachineMode) {
             oneProbe.registerProvider(new MachineModeProvider());
         }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayStainedColor) {
+            oneProbe.registerProvider(new StainedColorProvider());
+        }
     }
 
     public static void registerElements(ITheOneProbe oneProbe) {

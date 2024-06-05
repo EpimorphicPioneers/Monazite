@@ -59,6 +59,10 @@ public class MonaziteConfigHolder {
         @Configurable
         @Configurable.Comment({"If true, Display whether it is currently formed or not.", "Default: true"})
         public boolean displayMulitblockStructure = true;
+
+        @Configurable
+        @Configurable.Comment({"If true, Display stained color in pipe or other stain block", "Default: true"})
+        public boolean displayStainedColor = true;
     }
 
     public static class OreVeinDisplayConfigs {
