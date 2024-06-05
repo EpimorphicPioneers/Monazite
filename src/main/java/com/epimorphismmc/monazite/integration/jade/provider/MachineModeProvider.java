@@ -51,7 +51,7 @@ public enum MachineModeProvider implements IBlockComponentProvider, IServerDataP
     public void appendServerData(CompoundTag compoundTag, BlockAccessor blockAccessor) {
         if (blockAccessor.getBlockEntity() instanceof MetaMachineBlockEntity blockEntity) {
             @Nullable GTRecipeType[] recipeTypes = blockEntity.getMetaMachine().getDefinition().getRecipeTypes();
-            if (recipeTypes.length > 1) {
+            if (recipeTypes != null && recipeTypes.length > 1) {
                 if (blockEntity.getMetaMachine() instanceof IRecipeLogicMachine recipeLogicMachine) {
                     ListTag recipeTypesTagList = new ListTag();
                     GTRecipeType currentRecipeType = recipeLogicMachine.getRecipeType();

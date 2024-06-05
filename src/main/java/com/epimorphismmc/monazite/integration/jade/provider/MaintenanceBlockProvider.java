@@ -7,6 +7,7 @@ import com.epimorphismmc.monazite.utils.MoUtils;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMaintenanceMachine;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 import com.gregtechceu.gtceu.integration.jade.provider.CapabilityBlockProvider;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -63,10 +64,10 @@ public class MaintenanceBlockProvider extends CapabilityBlockProvider<IMaintenan
                         }
                     }
                 } else {
-                    iTooltip.add(Component.translatable("monazite.maintenance.broken"));
+                    iTooltip.add(Component.translatable("monazite.maintenance.broken").withStyle(ChatFormatting.RED));
                 }
             } else {
-                iTooltip.add(Component.translatable("monazite.maintenance.fixed"));
+                iTooltip.add(Component.translatable("monazite.maintenance.fixed").withStyle(ChatFormatting.GREEN));
             }
         }
     }
