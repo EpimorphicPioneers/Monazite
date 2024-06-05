@@ -51,6 +51,10 @@ public class MonaziteConfigHolder {
         @Configurable
         @Configurable.Comment({"If true, the voltage and amperage of the current cable will be displayed.", "Default: true"})
         public boolean displayCableInfo = true; // default true
+
+        @Configurable
+        @Configurable.Comment({"If true, The current mode of the machine will be displayed.", "Default: true"})
+        public boolean displayMachineMode = true; // default true
     }
 
     public static class OreVeinDisplayConfigs {

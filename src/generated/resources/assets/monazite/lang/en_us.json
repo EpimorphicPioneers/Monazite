@@ -5,6 +5,7 @@
   "config.jade.plugin_monazite.auto_output_info": "Auto Output Information Display",
   "config.jade.plugin_monazite.cable_info": "Cable Information Display",
   "config.jade.plugin_monazite.exhaust_vent_info": "Exhaust Vent Information Display",
+  "config.jade.plugin_monazite.machine_mode": "Machine Mode Display",
   "config.jade.plugin_monazite.maintenance_info": "Maintenance Information Display",
   "config.jade.plugin_monazite.recipe_output_info": "Recipe Outputs Display",
   "config.monazite.option.conciseMode": "Concise Mode",
@@ -12,6 +13,7 @@
   "config.monazite.option.displayAutoOutputInfo": "Auto Output Information Display",
   "config.monazite.option.displayCableInfo": "Cable Information Display",
   "config.monazite.option.displayExhaustVentInfo": "Exhaust Vent Information Display",
+  "config.monazite.option.displayMachineMode": "Display Machine Mode",
   "config.monazite.option.displayMaintenanceInfo": "Maintenance Information Display",
   "config.monazite.option.displayRecipeOutputs": "Recipe Outputs Display",
   "config.monazite.option.itemsPerLine": "Items Per Line",
@@ -29,6 +31,7 @@
   "monazite.cable.voltage": "Voltage: ",
   "monazite.exhaust_vent.blocked": "Blocked",
   "monazite.exhaust_vent.direction": "Exhaust Vent Direction: %s",
+  "monazite.machine_mode": "Machine Mode: %s",
   "monazite.maintenance.broken": "Needs Maintenance",
   "monazite.maintenance.fixed": "Maintenance Fine",
   "monazite.recipe.output": "Recipe Output:"

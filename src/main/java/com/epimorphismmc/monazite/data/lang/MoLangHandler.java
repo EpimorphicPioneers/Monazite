@@ -17,11 +17,13 @@ public class MoLangHandler {
         provider.add("monazite.auto_output.allow_input", "Allows Input");
         provider.add("monazite.cable.voltage", "Voltage: ");
         provider.add("monazite.cable.amperage", "Amperage: ");
+        provider.add("monazite.machine_mode", "Machine Mode: %s");
         provider.add("config.jade.plugin_monazite.recipe_output_info", "Recipe Outputs Display");
         provider.add("config.jade.plugin_monazite.maintenance_info", "Maintenance Information Display");
         provider.add("config.jade.plugin_monazite.exhaust_vent_info", "Exhaust Vent Information Display");
         provider.add("config.jade.plugin_monazite.auto_output_info", "Auto Output Information Display");
         provider.add("config.jade.plugin_monazite.cable_info", "Cable Information Display");
+        provider.add("config.jade.plugin_monazite.machine_mode", "Machine Mode Display");
         provider.add("key.categories.monazite", "Monazite");
         provider.add("key.toggleConciseMode", "Toggle Concise Mode");
         provider.add("config.screen.monazite", "Monazite");
@@ -36,6 +38,7 @@ public class MoLangHandler {
         provider.add("config.monazite.option.useNHDimensionDisplay", "Using NH-style Dimension Display");
         provider.add("config.monazite.option.showDimensionTier", "Showing Dimension Tier");
         provider.add("config.monazite.option.dimensions", "Custom Dimensions");
+        provider.add("config.monazite.option.displayMachineMode",  "Display Machine Mode");
         provider.add("block.monazite.dimension_display.minecraft.overworld", "Overworld");
         provider.add("block.monazite.dimension_display.minecraft.the_nether", "The Nether");
         provider.add("block.monazite.dimension_display.minecraft.the_end", "The End");
@@ -53,11 +56,13 @@ public class MoLangHandler {
         provider.add("monazite.auto_output.allow_input", "允许输入");
         provider.add("monazite.cable.voltage", "电压: ");
         provider.add("monazite.cable.amperage", "电流: ");
+        provider.add("monazite.machine_mode", "机器模式：%s");
         provider.add("config.jade.plugin_monazite.recipe_output_info", "配方输出显示");
         provider.add("config.jade.plugin_monazite.maintenance_info", "维护信息显示");
         provider.add("config.jade.plugin_monazite.exhaust_vent_info", "排气口信息显示");
         provider.add("config.jade.plugin_monazite.auto_output_info", "自动输出信息显示");
         provider.add("config.jade.plugin_monazite.cable_info", "线缆信息显示");
+        provider.add("config.jade.plugin_monazite.machine_mode", "机器模式显示");
         provider.add("key.categories.monazite", "Monazite");
         provider.add("key.toggleConciseMode", "开/关简洁模式");
         provider.add("config.screen.monazite", "Monazite");
@@ -73,6 +78,7 @@ public class MoLangHandler {
         provider.add("config.monazite.option.useNHDimensionDisplay", "使用NH样式的维度显示");
         provider.add("config.monazite.option.showDimensionTier", "显示维度层级");
         provider.add("config.monazite.option.dimensions", "自定义维度");
+        provider.add("config.monazite.option.displayMachineMode",  "显示机器模式");
         provider.add("block.monazite.dimension_display.minecraft.overworld", "主世界");
         provider.add("block.monazite.dimension_display.minecraft.the_nether", "下界");
         provider.add("block.monazite.dimension_display.minecraft.the_end", "末地");

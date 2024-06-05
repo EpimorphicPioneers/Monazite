@@ -34,6 +34,10 @@ public class MonaziteJadePlugin implements IWailaPlugin {
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayCableInfo) {
             registration.registerBlockDataProvider(CableBlockProvider.INSTANCE, BlockEntity.class);
         }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayMachineMode) {
+            registration.registerBlockDataProvider(MachineModeProvider.INSTANCE, BlockEntity.class);
+        }
     }
 
     @Override
@@ -56,6 +60,10 @@ public class MonaziteJadePlugin implements IWailaPlugin {
 
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayCableInfo) {
             registration.registerBlockComponent(CableBlockProvider.INSTANCE, Block.class);
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayMachineMode) {
+            registration.registerBlockComponent(MachineModeProvider.INSTANCE, Block.class);
         }
     }
 
