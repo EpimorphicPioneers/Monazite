@@ -17,7 +17,7 @@ public class MoLangHandler {
         provider.add("monazite.auto_output.allow_input", "Allows Input");
         provider.add("monazite.cable.voltage", "Voltage: ");
         provider.add("monazite.cable.amperage", "Amperage: ");
-        provider.add("monazite.machine_mode", "Machine Mode: %s");
+        provider.add("monazite.machine_mode", "Machine Mode: ");
         provider.add("config.jade.plugin_monazite.recipe_output_info", "Recipe Outputs Display");
         provider.add("config.jade.plugin_monazite.maintenance_info", "Maintenance Information Display");
         provider.add("config.jade.plugin_monazite.exhaust_vent_info", "Exhaust Vent Information Display");
@@ -56,7 +56,7 @@ public class MoLangHandler {
         provider.add("monazite.auto_output.allow_input", "允许输入");
         provider.add("monazite.cable.voltage", "电压: ");
         provider.add("monazite.cable.amperage", "电流: ");
-        provider.add("monazite.machine_mode", "机器模式：%s");
+        provider.add("monazite.machine_mode", "机器模式：");
         provider.add("config.jade.plugin_monazite.recipe_output_info", "配方输出显示");
         provider.add("config.jade.plugin_monazite.maintenance_info", "维护信息显示");
         provider.add("config.jade.plugin_monazite.exhaust_vent_info", "排气口信息显示");
