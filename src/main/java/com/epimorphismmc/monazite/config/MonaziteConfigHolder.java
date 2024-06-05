@@ -55,6 +55,10 @@ public class MonaziteConfigHolder {
         @Configurable
         @Configurable.Comment({"If true, The current mode of the machine will be displayed.", "Default: true"})
         public boolean displayMachineMode = true; // default true
+
+        @Configurable
+        @Configurable.Comment({"If true, Display whether it is currently formed or not.", "Default: true"})
+        public boolean displayMulitblockStructure = true;
     }
 
     public static class OreVeinDisplayConfigs {

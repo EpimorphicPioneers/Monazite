@@ -24,6 +24,7 @@ public class MoLangHandler {
         provider.add("config.jade.plugin_monazite.auto_output_info", "Auto Output Information Display");
         provider.add("config.jade.plugin_monazite.cable_info", "Cable Information Display");
         provider.add("config.jade.plugin_monazite.machine_mode", "Machine Mode Display");
+        provider.add("config.jade.plugin_monazite.multiblock_structure", "Multiblock Structure Display");
         provider.add("key.categories.monazite", "Monazite");
         provider.add("key.toggleConciseMode", "Toggle Concise Mode");
         provider.add("config.screen.monazite", "Monazite");
@@ -63,6 +64,7 @@ public class MoLangHandler {
         provider.add("config.jade.plugin_monazite.auto_output_info", "自动输出信息显示");
         provider.add("config.jade.plugin_monazite.cable_info", "线缆信息显示");
         provider.add("config.jade.plugin_monazite.machine_mode", "机器模式显示");
+        provider.add("config.jade.plugin_monazite.multiblock_structure", "多方块结构显示");
         provider.add("key.categories.monazite", "Monazite");
         provider.add("key.toggleConciseMode", "开/关简洁模式");
         provider.add("config.screen.monazite", "Monazite");

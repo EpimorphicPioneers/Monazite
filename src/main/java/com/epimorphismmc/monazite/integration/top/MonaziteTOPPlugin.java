@@ -29,6 +29,10 @@ public class MonaziteTOPPlugin {
             oneProbe.registerProvider(new RecipeOutputInfoProvider());
         }
 
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayMulitblockStructure) {
+            oneProbe.registerProvider(new MulitblockStructureProvider());
+        }
+
         if (ConfigHolder.INSTANCE.machines.enableMaintenance && MonaziteConfigHolder.INSTANCE.topInformation.displayMaintenanceInfo) {
             oneProbe.registerProvider(new MaintenanceInfoProvider());
         }

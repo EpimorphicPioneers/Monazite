@@ -7,6 +7,7 @@
   "config.jade.plugin_monazite.exhaust_vent_info": "排气口信息显示",
   "config.jade.plugin_monazite.machine_mode": "机器模式显示",
   "config.jade.plugin_monazite.maintenance_info": "维护信息显示",
+  "config.jade.plugin_monazite.multiblock_structure": "多方块结构显示",
   "config.jade.plugin_monazite.recipe_output_info": "配方输出显示",
   "config.monazite.option.conciseMode": "简洁模式",
   "config.monazite.option.dimensions": "自定义维度",
