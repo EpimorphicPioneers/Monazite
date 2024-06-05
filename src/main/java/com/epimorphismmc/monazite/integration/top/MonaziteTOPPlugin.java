@@ -44,6 +44,10 @@ public class MonaziteTOPPlugin {
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayCableInfo) {
             oneProbe.registerProvider(new CableInfoProvider());
         }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayMachineMode) {
+            oneProbe.registerProvider(new MachineModeProvider());
+        }
     }
 
     public static void registerElements(ITheOneProbe oneProbe) {

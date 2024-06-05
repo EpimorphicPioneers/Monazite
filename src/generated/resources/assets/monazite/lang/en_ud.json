@@ -5,6 +5,7 @@
   "config.jade.plugin_monazite.auto_output_info": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ʇndʇnO oʇnⱯ",
   "config.jade.plugin_monazite.cable_info": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ǝןqɐƆ",
   "config.jade.plugin_monazite.exhaust_vent_info": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ʇuǝΛ ʇsnɐɥxƎ",
+  "config.jade.plugin_monazite.machine_mode": "ʎɐןdsıᗡ ǝpoW ǝuıɥɔɐW",
   "config.jade.plugin_monazite.maintenance_info": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ǝɔuɐuǝʇuıɐW",
   "config.jade.plugin_monazite.recipe_output_info": "ʎɐןdsıᗡ sʇndʇnO ǝdıɔǝᴚ",
   "config.monazite.option.conciseMode": "ǝpoW ǝsıɔuoƆ",
@@ -12,6 +13,7 @@
   "config.monazite.option.displayAutoOutputInfo": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ʇndʇnO oʇnⱯ",
   "config.monazite.option.displayCableInfo": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ǝןqɐƆ",
   "config.monazite.option.displayExhaustVentInfo": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ʇuǝΛ ʇsnɐɥxƎ",
+  "config.monazite.option.displayMachineMode": "ǝpoW ǝuıɥɔɐW ʎɐןdsıᗡ",
   "config.monazite.option.displayMaintenanceInfo": "ʎɐןdsıᗡ uoıʇɐɯɹoɟuI ǝɔuɐuǝʇuıɐW",
   "config.monazite.option.displayRecipeOutputs": "ʎɐןdsıᗡ sʇndʇnO ǝdıɔǝᴚ",
   "config.monazite.option.itemsPerLine": "ǝuıꞀ ɹǝԀ sɯǝʇI",
@@ -29,6 +31,7 @@
   "monazite.cable.voltage": " :ǝbɐʇןoΛ",
   "monazite.exhaust_vent.blocked": "pǝʞɔoןᗺ",
   "monazite.exhaust_vent.direction": "%s :uoıʇɔǝɹıᗡ ʇuǝΛ ʇsnɐɥxƎ",
+  "monazite.machine_mode": "%s :ǝpoW ǝuıɥɔɐW",
   "monazite.maintenance.broken": "ǝɔuɐuǝʇuıɐW spǝǝN",
   "monazite.maintenance.fixed": "ǝuıℲ ǝɔuɐuǝʇuıɐW",
   "monazite.recipe.output": ":ʇndʇnO ǝdıɔǝᴚ"
