@@ -43,6 +43,10 @@ public class MonaziteJadePlugin implements IWailaPlugin {
             registration.registerBlockDataProvider(MachineModeProvider.INSTANCE, BlockEntity.class);
         }
 
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayParallel) {
+            registration.registerBlockDataProvider(ParallelProvider.INSTANCE, BlockEntity.class);
+        }
+
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayStainedColor) {
             registration.registerBlockDataProvider(StainedColorProvider.INSTANCE, BlockEntity.class);
         }
@@ -76,6 +80,10 @@ public class MonaziteJadePlugin implements IWailaPlugin {
 
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayMachineMode) {
             registration.registerBlockComponent(MachineModeProvider.INSTANCE, Block.class);
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayParallel) {
+            registration.registerBlockComponent(ParallelProvider.INSTANCE, Block.class);
         }
 
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayStainedColor) {
