@@ -53,6 +53,10 @@ public class MonaziteTOPPlugin {
             oneProbe.registerProvider(new MachineModeProvider());
         }
 
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayParallel) {
+            oneProbe.registerProvider(new ParallelProvider());
+        }
+
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayStainedColor) {
             oneProbe.registerProvider(new StainedColorProvider());
         }

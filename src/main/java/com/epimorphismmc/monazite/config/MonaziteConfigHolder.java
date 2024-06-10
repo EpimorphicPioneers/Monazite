@@ -63,6 +63,10 @@ public class MonaziteConfigHolder {
         @Configurable
         @Configurable.Comment({"If true, Display stained color in pipe or other stain block", "Default: true"})
         public boolean displayStainedColor = true;
+
+        @Configurable
+        @Configurable.Comment({"If true, Display parallel of the machine or hatch", "Default: true"})
+        public boolean displayParallel = true;
     }
 
     public static class OreVeinDisplayConfigs {

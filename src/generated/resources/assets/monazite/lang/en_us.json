@@ -8,6 +8,7 @@
   "config.jade.plugin_monazite.machine_mode": "Machine Mode Display",
   "config.jade.plugin_monazite.maintenance_info": "Maintenance Information Display",
   "config.jade.plugin_monazite.multiblock_structure": "Multiblock Structure Display",
+  "config.jade.plugin_monazite.parallel": "Parallel Display",
   "config.jade.plugin_monazite.recipe_output_info": "Recipe Outputs Display",
   "config.jade.plugin_monazite.stained_color": "Stained Color Display",
   "config.monazite.option.conciseMode": "Concise Mode",
