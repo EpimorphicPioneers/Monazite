@@ -29,6 +29,10 @@ public class MonaziteTOPPlugin {
             oneProbe.registerProvider(new RecipeOutputInfoProvider());
         }
 
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayMulitblockStructure) {
+            oneProbe.registerProvider(new MulitblockStructureProvider());
+        }
+
         if (ConfigHolder.INSTANCE.machines.enableMaintenance && MonaziteConfigHolder.INSTANCE.topInformation.displayMaintenanceInfo) {
             oneProbe.registerProvider(new MaintenanceInfoProvider());
         }
@@ -47,6 +51,14 @@ public class MonaziteTOPPlugin {
 
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayMachineMode) {
             oneProbe.registerProvider(new MachineModeProvider());
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayParallel) {
+            oneProbe.registerProvider(new ParallelProvider());
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayStainedColor) {
+            oneProbe.registerProvider(new StainedColorProvider());
         }
     }
 

@@ -19,6 +19,10 @@ public class MonaziteJadePlugin implements IWailaPlugin {
             registration.registerBlockDataProvider(RecipeOutputProvider.INSTANCE, BlockEntity.class);
         }
 
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayMulitblockStructure) {
+            registration.registerBlockDataProvider(MulitblockStructureProvider.INSTANCE, BlockEntity.class);
+        }
+
         if (ConfigHolder.INSTANCE.machines.enableMaintenance && MonaziteConfigHolder.INSTANCE.topInformation.displayMaintenanceInfo) {
             registration.registerBlockDataProvider(MaintenanceBlockProvider.INSTANCE, BlockEntity.class);
         }
@@ -38,12 +42,24 @@ public class MonaziteJadePlugin implements IWailaPlugin {
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayMachineMode) {
             registration.registerBlockDataProvider(MachineModeProvider.INSTANCE, BlockEntity.class);
         }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayParallel) {
+            registration.registerBlockDataProvider(ParallelProvider.INSTANCE, BlockEntity.class);
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayStainedColor) {
+            registration.registerBlockDataProvider(StainedColorProvider.INSTANCE, BlockEntity.class);
+        }
     }
 
     @Override
     public void registerClient(IWailaClientRegistration registration) {
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayRecipeOutputs) {
             registration.registerBlockComponent(RecipeOutputProvider.INSTANCE, Block.class);
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayMulitblockStructure) {
+            registration.registerBlockComponent(MulitblockStructureProvider.INSTANCE, Block.class);
         }
 
         if (ConfigHolder.INSTANCE.machines.enableMaintenance && MonaziteConfigHolder.INSTANCE.topInformation.displayMaintenanceInfo) {
@@ -64,6 +80,14 @@ public class MonaziteJadePlugin implements IWailaPlugin {
 
         if (MonaziteConfigHolder.INSTANCE.topInformation.displayMachineMode) {
             registration.registerBlockComponent(MachineModeProvider.INSTANCE, Block.class);
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayParallel) {
+            registration.registerBlockComponent(ParallelProvider.INSTANCE, Block.class);
+        }
+
+        if (MonaziteConfigHolder.INSTANCE.topInformation.displayStainedColor) {
+            registration.registerBlockComponent(StainedColorProvider.INSTANCE, Block.class);
         }
     }
 

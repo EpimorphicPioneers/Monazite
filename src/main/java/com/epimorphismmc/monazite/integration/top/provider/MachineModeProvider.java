@@ -28,7 +28,7 @@ public class MachineModeProvider implements IProbeInfoProvider {
     public void addProbeInfo(ProbeMode probeMode, IProbeInfo iProbeInfo, Player player, Level level, BlockState blockState, IProbeHitData iProbeHitData) {
         if (level.getBlockEntity(iProbeHitData.getPos()) instanceof MetaMachineBlockEntity blockEntity) {
             @Nullable GTRecipeType[] recipeTypes = blockEntity.getMetaMachine().getDefinition().getRecipeTypes();
-            if (recipeTypes.length > 1) {
+            if (recipeTypes != null && recipeTypes.length > 1) {
                 if (blockEntity.getMetaMachine() instanceof IRecipeLogicMachine recipeLogicMachine) {
                     GTRecipeType currentRecipeType = recipeLogicMachine.getRecipeType();
                     if (player.isShiftKeyDown()) {
